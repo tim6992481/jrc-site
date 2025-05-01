@@ -4,10 +4,10 @@ import "slick-carousel/slick/slick-theme.css";
 import "./ImageCarousel.css";
 
 const imageData = [
-    { src: "/images/kids.jpg", title: "兒童主日學" },
-    { src: "/images/students.jpg", title: "學生課輔" },
-    { src: "/images/elders.jpg", title: "長者關懷" },
-    { src: "/images/christmas.jpg", title: "聖誕慶典" },
+    { src: "/jrc-site/images/kids.jpg", title: "兒童主日學" },
+    { src: "/jrc-site/images/students.jpg", title: "學生課輔" },
+    { src: "/jrc-site/images/elders.jpg", title: "長者關懷" },
+    { src: "/jrc-site/images/christmas.jpg", title: "聖誕慶典" },
 ];
 
 const ImageCarousel = () => {
@@ -19,13 +19,12 @@ const ImageCarousel = () => {
         speed: 1500,
         slidesToShow: 2,
         slidesToScroll: 1,
-        arrows: true,
+        arrows: false,
         responsive: [
             {
                 breakpoint: 768,
                 settings: {
                     slidesToShow: 1,
-                    slidesToScroll: 1,
                 },
             },
         ],

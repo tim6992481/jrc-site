@@ -127,6 +127,8 @@ function NewsEdit(props) {
                         init={{
                             height: 600,
                             menubar: false,
+                            branding: false,
+                            statusbar: false,
                             plugins: ["advlist autolink lists link image charmap print preview anchor"],
                             toolbar: toolbarConfig,
                         }}

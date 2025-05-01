@@ -3,13 +3,14 @@ import { useNavigate } from "react-router-dom";
 import "./About.css";
 
 const activities = [
-    { id: "reunion", title: "小組聚會", image: "/icons/reunion.png" },
-    { id: "worship", title: "主日崇拜", image: "/icons/worship.png" },
-    { id: "kids", title: "兒童主日學", image: "/icons/kids.png" },
-    { id: "students", title: "學生課輔", image: "/icons/students.png" },
-    { id: "elders", title: "長者關懷", image: "/icons/elders.png" },
-    { id: "camp", title: "暑期營隊", image: "/icons/camp.png" },
-    { id: "christmas", title: "聖誕慶典", image: "/icons/christmas.png" },
+    { id: "reunion", title: "小組聚會", image: "/jrc-site/icons/reunion.png" },
+    { id: "worship", title: "主日崇拜", image: "/jrc-site/icons/worship.png" },
+    { id: "kids", title: "兒童主日學", image: "/jrc-site/icons/kids.png" },
+    { id: "students", title: "學生課輔", image: "/jrc-site/icons/students.png" },
+    { id: "elders", title: "長者關懷", image: "/jrc-site/icons/elders.png" },
+    { id: "camp", title: "暑期營隊", image: "/jrc-site/icons/camp.png" },
+    { id: "easter", title: "復活節活動", image: "/jrc-site/icons/easter.png" },
+    { id: "christmas", title: "聖誕慶典", image: "/jrc-site/icons/christmas.png" },
 ];
 
 const About = () => {

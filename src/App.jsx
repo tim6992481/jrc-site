@@ -1,5 +1,5 @@
 import React, { useState } from "react";
-import { BrowserRouter as Router, Routes, Route, Link, useLocation } from "react-router-dom";
+import { HashRouter as Router, Routes, Route, Link, useLocation } from "react-router-dom";
 import HomePage from "./pages/HomePage";
 import About from "./pages/About";
 import News from "./pages/News";
@@ -11,6 +11,7 @@ import { db } from "../src/firebase.js";
 import { get, ref } from "firebase/database";
 import md5 from "js-md5";
 import AboutDetail from "./pages/AboutDetail.jsx";
+import MenuIcon from "@mui/icons-material/Menu";
 
 const pageTitles = {
     "/": "",
@@ -67,13 +68,13 @@ function App() {
         <Router>
             <div className="container">
                 <div className="content-wrapper">
-                    {/* Logo Header */}
                     <header className="header">
-                        <Link to="/">喜樂復興教會</Link>
+                        <Link to="/">
+                            喜樂復興教會<div style={{ fontSize: "16px" }}>Joyful Revival Church</div>
+                        </Link>
 
-                        {/* 漢堡按鈕 */}
                         <button className="menu-toggle" onClick={() => setMenuOpen(!menuOpen)}>
-                            ☰
+                            <MenuIcon sx={{ fontSize: 32 }} />
                         </button>
 
                         {!isLogin && (
@@ -89,10 +90,8 @@ function App() {
                         )}
                     </header>
 
-                    {/* 背景遮罩 */}
                     {menuOpen && <div className="navbar-overlay open" onClick={() => setMenuOpen(false)}></div>}
 
-                    {/* 導覽列 */}
                     <nav className={`navbar ${menuOpen ? "open" : ""}`}>
                         <Link to="/" onClick={() => setMenuOpen(false)}>
                             首頁
@@ -108,7 +107,6 @@ function App() {
                         </Link>
                     </nav>
 
-                    {/* 主內容 */}
                     <main>
                         <PageHeader />
 
@@ -125,7 +123,6 @@ function App() {
                         </div>
                     </main>
 
-                    {/* 登入對話框 */}
                     {showLogin && (
                         <div className="login-overlay">
                             <div className="login-modal">
@@ -134,8 +131,11 @@ function App() {
                                 <input type="password" placeholder="密碼" value={password} onChange={(e) => setPassword(e.target.value)} />
                                 {error && <div className="error">{error}</div>}
                                 <div style={{ display: "flex", gap: "15px", justifyContent: "center", marginTop: "20px" }}>
-                                    <button onClick={handleLogin}>登入</button>
+                                    <button className="ok-button" onClick={handleLogin}>
+                                        登入
+                                    </button>
                                     <button
+                                        className="cancel-button"
                                         onClick={() => {
                                             setShowLogin(false);
                                             setUsername("");
@@ -150,7 +150,6 @@ function App() {
                         </div>
                     )}
 
-                    {/* 頁尾 */}
                     <footer className="footer">
                         <div>喜樂復興教會</div>
                         <div>地址：800高雄市新興區中山一路xx-xx號</div>

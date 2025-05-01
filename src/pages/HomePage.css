@@ -29,9 +29,9 @@
 }
 
 .activity-block:hover {
-    transform: scale(1.01);
+    transform: scale(1.02);
     box-shadow: 0 14px 28px rgba(0, 0, 0, 0.2);
-    background-color: #e3f6ff;
+    background-color: #ecf8ff;
     z-index: 2;
 }
 
@@ -43,7 +43,7 @@
     position: relative;
     display: flex;
     align-items: stretch;
-    filter: brightness(0.9);
+    filter: brightness(0.85);
 }
 
 .activity-block:hover .activity-image {

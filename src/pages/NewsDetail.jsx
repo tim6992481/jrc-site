@@ -3,6 +3,7 @@ import { useNavigate, useParams } from "react-router-dom";
 import { onValue, ref } from "firebase/database";
 import "./News.css";
 import { db } from "../firebase";
+import ArrowBackIosIcon from "@mui/icons-material/ArrowBackIos";
 
 function NewsDetail() {
     const navigate = useNavigate();
@@ -36,7 +37,7 @@ function NewsDetail() {
             <div className="news-content" dangerouslySetInnerHTML={{ __html: currentNews.content }} />
             <div className="news-actions">
                 <button className="back-button" onClick={() => navigate(`/news`)}>
-                    ← 返回
+                    <ArrowBackIosIcon /> 返回
                 </button>
             </div>
         </div>
