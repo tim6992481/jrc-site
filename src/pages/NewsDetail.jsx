@@ -1,9 +1,9 @@
+import ArrowBackIosIcon from "@mui/icons-material/ArrowBackIos";
+import { onValue, ref } from "firebase/database";
 import React, { useEffect, useState } from "react";
 import { useNavigate, useParams } from "react-router-dom";
-import { onValue, ref } from "firebase/database";
-import "./News.css";
 import { db } from "../firebase";
-import ArrowBackIosIcon from "@mui/icons-material/ArrowBackIos";
+import "./News.css";
 
 function NewsDetail() {
     const navigate = useNavigate();
@@ -11,24 +11,20 @@ function NewsDetail() {
     const [currentNews, setCurrentNews] = useState([]);
 
     useEffect(() => {
-        const newsRef = ref(db, "news");
+        if (!id) return;
+
+        const newsRef = ref(db, `news/${id}`);
 
         const unsubscribe = onValue(newsRef, (snapshot) => {
             if (snapshot.exists()) {
-                const data = snapshot.val();
-                const newsArray = Object.keys(data).map((key) => ({
-                    id: key,
-                    ...data[key],
-                }));
-
-                setCurrentNews(newsArray.find((news) => news.id === id));
+                setCurrentNews({ id, ...snapshot.val() });
             } else {
-                setCurrentNews([]);
+                setCurrentNews(null);
             }
         });
 
         return () => unsubscribe();
-    }, []);
+    }, [id]);
 
     return (
         <div className="news-detail">

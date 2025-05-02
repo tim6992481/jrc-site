@@ -1,8 +1,8 @@
-import { Link, useNavigate } from "react-router-dom";
-import "./News.css";
-import { useEffect, useState } from "react";
 import { onValue, ref, update } from "firebase/database";
+import { useEffect, useState } from "react";
+import { Link, useNavigate } from "react-router-dom";
 import { db } from "../firebase";
+import "./News.css";
 
 export default function News(props) {
     const [newsData, setNewsData] = useState([]);

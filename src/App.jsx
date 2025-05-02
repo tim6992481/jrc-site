@@ -1,17 +1,17 @@
-import React, { useState } from "react";
-import { HashRouter as Router, Routes, Route, Link, useLocation } from "react-router-dom";
-import HomePage from "./pages/HomePage";
-import About from "./pages/About";
-import News from "./pages/News";
-import Contact from "./pages/Contact";
-import "./App.css";
-import NewsDetail from "./pages/NewsDetail";
-import NewsEdit from "./pages/NewsEdit";
-import { db } from "../src/firebase.js";
+import MenuIcon from "@mui/icons-material/Menu";
 import { get, ref } from "firebase/database";
 import md5 from "js-md5";
+import React, { useState } from "react";
+import { Link, Route, HashRouter as Router, Routes, useLocation } from "react-router-dom";
+import { db } from "../src/firebase.js";
+import "./App.css";
+import About from "./pages/About";
 import AboutDetail from "./pages/AboutDetail.jsx";
-import MenuIcon from "@mui/icons-material/Menu";
+import Contact from "./pages/Contact";
+import HomePage from "./pages/HomePage";
+import News from "./pages/News";
+import NewsDetail from "./pages/NewsDetail";
+import NewsEdit from "./pages/NewsEdit";
 
 const pageTitles = {
     "/": "",
@@ -130,7 +130,7 @@ function App() {
                                 <input type="text" placeholder="帳號" value={username} onChange={(e) => setUsername(e.target.value)} />
                                 <input type="password" placeholder="密碼" value={password} onChange={(e) => setPassword(e.target.value)} />
                                 {error && <div className="error">{error}</div>}
-                                <div style={{ display: "flex", gap: "15px", justifyContent: "center", marginTop: "20px" }}>
+                                <div style={{ display: "flex", gap: "15px", justifyContent: "center", margin: "10px" }}>
                                     <button className="ok-button" onClick={handleLogin}>
                                         登入
                                     </button>

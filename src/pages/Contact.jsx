@@ -1,14 +1,15 @@
+import { AdvancedMarker, APIProvider, Map, Pin } from "@vis.gl/react-google-maps";
 import React from "react";
-import { AdvancedMarker, APIProvider, Map, MapControl, Pin } from "@vis.gl/react-google-maps";
+import "./Contact.css";
 
 const Contact = () => {
-    const position = { lat: 22.626122, lng: 120.301558 };
+    const position = { lat: 22.626234814717982, lng: 120.3015914872703 };
 
     return (
         <div className="contact-page">
             <div className="map-container">
                 <APIProvider apiKey={"AIzaSyBiCYXmr1_pX2rY9qGV2OHoXKjv0xZ7pCo"}>
-                    <Map style={{ width: "100%", height: "500px", marginTop: "30px" }} defaultCenter={position} defaultZoom={16} mapId="DEMO_MAP_ID" zoomControl={true}>
+                    <Map style={{ width: "100%", height: "400px" }} defaultCenter={position} defaultZoom={16} mapId="DEMO_MAP_ID" zoomControl={true}>
                         <AdvancedMarker position={position}>
                             <Pin />
                         </AdvancedMarker>

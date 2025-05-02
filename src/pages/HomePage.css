@@ -8,8 +8,8 @@
 }
 
 .about-wrapper a {
-    text-decoration: none; /* 移除下底線 */
-    color: inherit; /* 繼承父元素顏色 */
+    text-decoration: none;
+    color: inherit;
 }
 
 .activity-block {

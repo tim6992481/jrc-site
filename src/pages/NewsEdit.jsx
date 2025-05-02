@@ -1,9 +1,9 @@
-import React, { useState, useEffect } from "react";
-import { useNavigate, useParams } from "react-router-dom";
-import "./News.css";
 import { Editor } from "@tinymce/tinymce-react";
 import { onValue, ref, update } from "firebase/database";
+import React, { useEffect, useState } from "react";
+import { useNavigate, useParams } from "react-router-dom";
 import { db } from "../firebase";
+import "./News.css";
 
 function NewsEdit(props) {
     const navigate = useNavigate();

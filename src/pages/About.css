@@ -17,12 +17,12 @@
     overflow: hidden;
     border-radius: 16px;
     box-shadow: 0 6px 24px rgba(0, 0, 0, 0.2);
-    background-color: #fff;
+    background-color: #ffffff;
     transition: transform 0.4s ease;
 }
 
 .activity-card:hover {
-    transform: scale(1.05);
+    filter: brightness(1.1);
 }
 
 .card-text {
@@ -42,7 +42,7 @@
     justify-content: center;
     align-items: center;
     padding: 10px;
-    background-color: #dceffc;
+    background-color: #c2ecff;
 }
 
 .image-wrapper img {
