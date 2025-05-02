@@ -95,9 +95,9 @@ function NewsEdit(props) {
 
     function getToolbar() {
         if (window.innerWidth < 768) {
-            return ["undo redo | alignleft aligncenter alignright alignjustify removeformat", "fontsize | bold italic underline strikethrough forecolor backcolor"];
+            return ["undo redo alignleft aligncenter alignright alignjustify removeformat link bullist numlist", "fontsize bold italic underline strikethrough forecolor backcolor"];
         } else {
-            return ["undo redo | fontsize | bold italic underline strikethrough forecolor backcolor | alignleft aligncenter alignright alignjustify removeformat"];
+            return ["undo redo fontsize bold italic underline strikethrough forecolor backcolor removeformat alignleft aligncenter alignright alignjustify link bullist numlist"];
         }
     }
 
@@ -131,7 +131,7 @@ function NewsEdit(props) {
                             menubar: false,
                             branding: false,
                             statusbar: false,
-                            plugins: ["advlist autolink lists link image charmap print preview anchor"],
+                            plugins: "lists link preview",
                             toolbar: toolbarConfig,
                         }}
                     />

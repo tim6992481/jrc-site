@@ -10,7 +10,7 @@ const activityDetails = {
     elders: { title: "長者關懷", description: "這是長者關懷的詳細介紹", image: "/jrc-site/icons/elders.png" },
     camp: { title: "暑期營隊", description: "這是暑期營隊的詳細介紹", image: "/jrc-site/icons/camp.png" },
     easter: { title: "復活節活動", description: "這是復活節活動的詳細介紹", image: "/jrc-site/icons/easter.png" },
-    christmas: { title: "聖誕慶典", description: "這是聖誕慶典的詳細介紹", image: "/jrc-site/icons/christmas.png" },
+    christmas: { title: "聖誕節活動", description: "這是聖誕慶典的詳細介紹", image: "/jrc-site/icons/christmas.png" },
 };
 
 const AboutDetail = () => {

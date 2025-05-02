@@ -3,3 +3,23 @@
     max-width: 1200px;
     margin: 0 auto;
 }
+
+.contact-info {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center; /* ✅ 修正這裡不是 justify-self */
+    width: 100%;
+    max-width: 600px;
+    margin: 0 auto; /* ✅ 加上這行保證水平置中 */
+    text-align: center;
+}
+
+.contact-item {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-top: 10px;
+    gap: 5px;
+    width: 100%;
+}

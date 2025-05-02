@@ -10,7 +10,7 @@ const activities = [
     { id: "elders", title: "長者關懷", image: "/jrc-site/icons/elders.png" },
     { id: "camp", title: "暑期營隊", image: "/jrc-site/icons/camp.png" },
     { id: "easter", title: "復活節活動", image: "/jrc-site/icons/easter.png" },
-    { id: "christmas", title: "聖誕慶典", image: "/jrc-site/icons/christmas.png" },
+    { id: "christmas", title: "聖誕節活動", image: "/jrc-site/icons/christmas.png" },
 ];
 
 const About = () => {

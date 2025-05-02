@@ -1,4 +1,7 @@
+import EmailIcon from "@mui/icons-material/Email";
+import LocationPinIcon from "@mui/icons-material/LocationPin";
 import MenuIcon from "@mui/icons-material/Menu";
+import PhoneIcon from "@mui/icons-material/Phone";
 import { get, ref } from "firebase/database";
 import md5 from "js-md5";
 import React, { useState } from "react";
@@ -151,10 +154,32 @@ function App() {
                     )}
 
                     <footer className="footer">
-                        <div>喜樂復興教會</div>
-                        <div>地址：800高雄市新興區中山一路xx-xx號</div>
-                        <div>聯絡電話：0912-345-678</div>
-                        <div>Email：example@gmail.com</div>
+                        <div className="footer-left">
+                            <div>喜樂復興教會</div>
+                            <div>
+                                <LocationPinIcon />
+                                <span>高雄市新興區中山一路 xx 號</span>
+                            </div>
+                            <div>
+                                <PhoneIcon />
+                                <span>莫老師 0939-565-892</span>
+                            </div>
+                            <div>
+                                <EmailIcon />
+                                <span>example@gmail.com</span>
+                            </div>
+                        </div>
+                        <div className="footer-right">
+                            <a href="https://www.facebook.com/groups/1404569666890900">
+                                <img src="/jrc-site/icons/facebook.png" alt="Facebook" />
+                            </a>
+                            <a href="https://www.instagram.com/joyrevivalchurh77">
+                                <img src="/jrc-site/icons/instagram.png" alt="Instagram" />
+                            </a>
+                            <a href="https://www.youtube.com/@jrc7627">
+                                <img src="/jrc-site/icons/youtube.png" alt="YouTube" />
+                            </a>
+                        </div>
                     </footer>
                 </div>
             </div>
