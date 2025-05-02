@@ -9,7 +9,7 @@ const Contact = () => {
         <div className="contact-page">
             <div className="map-container">
                 <APIProvider apiKey={"AIzaSyBiCYXmr1_pX2rY9qGV2OHoXKjv0xZ7pCo"}>
-                    <Map style={{ width: "100%", height: "400px" }} defaultCenter={position} defaultZoom={16} mapId="DEMO_MAP_ID" zoomControl={true}>
+                    <Map style={{ width: "100%", height: "400px", marginBottom: "30px" }} defaultCenter={position} defaultZoom={16} mapId="DEMO_MAP_ID" zoomControl={true}>
                         <AdvancedMarker position={position}>
                             <Pin />
                         </AdvancedMarker>

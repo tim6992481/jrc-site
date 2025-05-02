@@ -8,7 +8,7 @@ import "./News.css";
 function NewsDetail() {
     const navigate = useNavigate();
     const { id } = useParams();
-    const [currentNews, setCurrentNews] = useState([]);
+    const [currentNews, setCurrentNews] = useState(undefined); // ✅ 初始為 undefined
 
     useEffect(() => {
         if (!id) return;
@@ -28,14 +28,24 @@ function NewsDetail() {
 
     return (
         <div className="news-detail">
-            <div className="news-title">{currentNews.title}</div>
-            <div className="news-date">{currentNews.date}</div>
-            <div className="news-content" dangerouslySetInnerHTML={{ __html: currentNews.content }} />
-            <div className="news-actions">
-                <button className="back-button" onClick={() => navigate(`/news`)}>
-                    <ArrowBackIosIcon /> 返回
-                </button>
-            </div>
+            {currentNews === undefined ? (
+                <div className="loading">載入中...</div>
+            ) : currentNews === null ? (
+                <div className="news-title">內容不存在</div>
+            ) : currentNews.isUsed ? (
+                <>
+                    <div className="news-title">{currentNews.title}</div>
+                    <div className="news-date">{currentNews.date}</div>
+                    <div className="news-content" dangerouslySetInnerHTML={{ __html: currentNews.content }} />
+                    <div className="news-actions">
+                        <button className="back-button" onClick={() => navigate(`/news`)}>
+                            <ArrowBackIosIcon /> 返回
+                        </button>
+                    </div>
+                </>
+            ) : (
+                <div className="news-title">內容不存在</div>
+            )}
         </div>
     );
 }

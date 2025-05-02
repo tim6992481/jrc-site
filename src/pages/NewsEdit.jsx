@@ -105,6 +105,8 @@ function NewsEdit(props) {
 
     return (
         <div className="news-edit">
+            <div style={{ fontSize: "18px", fontWeight: "bold", color: "red", marginBottom: "20px" }}>*建議使用電腦操作編輯</div>
+
             <div className="form-group">
                 <label>標題</label>
                 <input type="text" name="title" value={formData.title} onChange={handleChange} className="title-input" />
