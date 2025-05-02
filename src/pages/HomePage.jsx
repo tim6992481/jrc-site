@@ -17,7 +17,7 @@ const activities = [
     },
     {
         title: "長者關懷",
-        description: "前往日照中心，關心長者需要，帶下愛和祝福。",
+        description: "前往日照中心舉辦活動，帶下愛和祝福給長者。",
         image: "/jrc-site/images/elders.jpg",
         link: "elders",
     },
