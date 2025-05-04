@@ -1,50 +1,25 @@
 import { Editor } from "@tinymce/tinymce-react";
-import axios from "axios";
 import { onValue, ref, update } from "firebase/database";
-import React, { useEffect, useState } from "react";
+import { useEffect, useState } from "react";
 import { useNavigate, useParams } from "react-router-dom";
 import { db } from "../firebase";
-import "./News.css";
+import "./About.css";
 
-function NewsEdit(props) {
+function AboutEdit(props) {
     const navigate = useNavigate();
-    const { id } = useParams();
+    const { activityId } = useParams();
     const [toolbarConfig, setToolbarConfig] = useState(getToolbar());
-    const [formData, setFormData] = useState({
-        title: "",
-        content: "<p></p>",
-        createTime: "",
-    });
-    const [isNewNews, setIsNewNews] = useState(false);
+    const [description, setDescription] = useState("<p></p>");
 
     useEffect(() => {
-        const newsRef = ref(db, "news");
+        const activityRef = ref(db, `activities/${activityId}`);
 
-        const unsubscribe = onValue(newsRef, (snapshot) => {
+        const unsubscribe = onValue(activityRef, (snapshot) => {
             if (snapshot.exists()) {
                 const data = snapshot.val();
-                const newsArray = Object.keys(data).map((key) => ({
-                    id: key,
-                    ...data[key],
-                }));
-
-                const currentNews = newsArray.find((news) => news.id === id);
-
-                if (currentNews) {
-                    setFormData({
-                        title: currentNews.title,
-                        content: currentNews.content,
-                        createTime: currentNews.createTime,
-                    });
-                    setIsNewNews(false);
-                } else {
-                    setFormData({
-                        title: "",
-                        content: "<p></p>",
-                        createTime: "",
-                    });
-                    setIsNewNews(true);
-                }
+                setDescription(data.description);
+            } else {
+                setDescription("<p></p>");
             }
         });
 
@@ -57,48 +32,22 @@ function NewsEdit(props) {
         return () => window.removeEventListener("resize", handleResize);
     }, []);
 
-    const handleChange = (e) => {
-        const { name, value } = e.target;
-        setFormData((prev) => ({
-            ...prev,
-            [name]: value,
-        }));
-    };
-
     const handleSave = async () => {
         if (!props.isLogin) {
             alert("請先登入才能儲存修改。");
             return;
         }
 
-        if (!formData.title.trim()) {
-            alert("標題不可為空白");
-            return;
-        }
-
         const confirmSave = window.confirm("您確定要儲存這些修改嗎？");
         if (!confirmSave) return;
 
-        const now = new Date().toISOString();
-
-        const dataToUpdate = {
-            id: id,
-            title: formData.title,
-            content: formData.content,
-            isUsed: true,
-            createTime: isNewNews ? now : formData.createTime,
-            lastEditTime: now,
-        };
-
         if (confirmSave) {
-            const newsRef = ref(db, "news");
+            const activityRef = ref(db, `activities/${activityId}`);
 
             try {
-                await update(newsRef, {
-                    [id]: dataToUpdate,
-                });
+                await update(activityRef, { description });
                 alert("成功提交修改！");
-                navigate(`/news`);
+                navigate(`/about/${activityId}`);
             } catch (error) {
                 alert("儲存失敗：" + error.message);
             }
@@ -113,25 +62,17 @@ function NewsEdit(props) {
         }
     }
 
-    if (!formData) return <div>資料載入中...</div>;
-
     return (
-        <div className="news-edit">
+        <div className="about-edit">
             <div style={{ fontSize: "18px", fontWeight: "bold", color: "red", marginBottom: "20px" }}>*建議使用電腦操作編輯</div>
 
             <div className="form-group">
-                <label>標題</label>
-                <input type="text" name="title" value={formData.title} onChange={handleChange} className="title-input" />
-            </div>
-
-            <div className="form-group">
-                <label>內容</label>
                 <div className="editor-container">
                     <Editor
                         apiKey="qmhxp7p9xdb80g9ujl2hp8cifitmh76ze32x72ahjnxruxfe"
-                        value={formData.content}
-                        onEditorChange={(content, editor) => {
-                            setFormData((prev) => ({ ...prev, content }));
+                        value={description}
+                        onEditorChange={(content) => {
+                            setDescription(content);
                         }}
                         init={{
                             height: 600,
@@ -202,7 +143,7 @@ function NewsEdit(props) {
                 <button className="save-button" onClick={handleSave}>
                     保存
                 </button>
-                <button className="cancel-button" onClick={() => navigate(`/news`)}>
+                <button className="cancel-button" onClick={() => navigate(`/about/${activityId}`)}>
                     取消
                 </button>
             </div>
@@ -210,4 +151,4 @@ function NewsEdit(props) {
     );
 }
 
-export default NewsEdit;
+export default AboutEdit;

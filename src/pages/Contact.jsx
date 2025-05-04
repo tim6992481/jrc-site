@@ -24,7 +24,7 @@ const Contact = () => {
                 <div className="contact-item">
                     <LocationPinIcon />{" "}
                     <span>
-                        高雄市新興區中山一路 xx 號
+                        高雄市新興區中山一路 14 號
                         <br />( 於高雄捷運中央公園站 3 號出口前 )
                     </span>
                 </div>

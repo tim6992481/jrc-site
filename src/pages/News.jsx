@@ -4,6 +4,18 @@ import { Link, useNavigate } from "react-router-dom";
 import { db } from "../firebase";
 import "./News.css";
 
+function formatDate(isoString) {
+    if (!isoString) return "無資料";
+    const date = new Date(isoString);
+    return date.toLocaleString("zh-TW", {
+        year: "numeric",
+        month: "2-digit",
+        day: "2-digit",
+        hour: "2-digit",
+        minute: "2-digit",
+    });
+}
+
 export default function News(props) {
     const [newsData, setNewsData] = useState([]);
     const navigate = useNavigate();
@@ -54,12 +66,15 @@ export default function News(props) {
         }
     };
 
-    const isNew = (newsDate) => {
-        const currentDate = new Date();
-        const newsDateObj = new Date(newsDate);
+    const isNew = (isoString) => {
+        if (!isoString) return false;
 
-        const diffTime = currentDate - newsDateObj;
-        const diffDays = diffTime / (1000 * 3600 * 24);
+        const newsDate = new Date(isoString);
+        if (isNaN(newsDate.getTime())) return false; // 無效日期保護
+
+        const now = new Date();
+        const diffTime = now - newsDate;
+        const diffDays = diffTime / (1000 * 60 * 60 * 24); // 毫秒轉天數
 
         return diffDays <= 7;
     };
@@ -73,10 +88,10 @@ export default function News(props) {
                     <div key={index} className="news-card">
                         <Link to={`/news/${news.id}`} className="news-link">
                             <div className="news-title">
-                                {news.title} {isNew(news.date) && <span className="new-tag">New</span>}
+                                {news.title} {isNew(news.createTime) && <span className="new-tag">New</span>}
                             </div>
                         </Link>
-                        <div className="news-date">{news.date}</div>
+                        <div className="news-time">{formatDate(news.createTime)}</div>
                         {props.isLogin && (
                             <div style={{ marginTop: "10px", display: "flex", gap: "10px" }}>
                                 <button className="edit-button" onClick={() => handleEdit(news.id)}>

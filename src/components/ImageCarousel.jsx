@@ -4,10 +4,10 @@ import "slick-carousel/slick/slick.css";
 import "./ImageCarousel.css";
 
 const imageData = [
-    { src: "/jrc-site/images/kids.jpg", title: "兒童主日學" },
-    { src: "/jrc-site/images/students.jpg", title: "學生課輔" },
-    { src: "/jrc-site/images/elders.jpg", title: "長者關懷" },
-    { src: "/jrc-site/images/christmas.jpg", title: "聖誕慶典" },
+    { src: "https://res.cloudinary.com/dtecs6q1u/image/upload/v1746282578/kids_qhohro.jpg", title: "兒童主日學" },
+    { src: "https://res.cloudinary.com/dtecs6q1u/image/upload/v1746282579/students_opqmfj.jpg", title: "學生課輔" },
+    { src: "https://res.cloudinary.com/dtecs6q1u/image/upload/v1746282578/elders_lu6stx.jpg", title: "長者關懷" },
+    { src: "https://res.cloudinary.com/dtecs6q1u/image/upload/v1746282578/christmas_gwr7cj.jpg", title: "聖誕慶典" },
 ];
 
 const ImageCarousel = () => {

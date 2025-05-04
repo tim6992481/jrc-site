@@ -10,6 +10,7 @@ import { db } from "../src/firebase.js";
 import "./App.css";
 import About from "./pages/About";
 import AboutDetail from "./pages/AboutDetail.jsx";
+import AboutEdit from "./pages/AboutEdit.jsx";
 import Contact from "./pages/Contact";
 import HomePage from "./pages/HomePage";
 import News from "./pages/News";
@@ -32,6 +33,7 @@ function PageHeader() {
 function getPageTitle(pathname) {
     if (pathname.startsWith("/news/edit")) return "編輯頁面";
     if (pathname.startsWith("/news")) return "最新消息";
+    if (pathname.startsWith("/about/edit")) return "編輯頁面";
     if (pathname.startsWith("/about")) return "活動介紹";
 
     return pageTitles[pathname] || "";
@@ -64,7 +66,11 @@ function App() {
     };
 
     const handleLogout = () => {
-        setIsLogin(!isLogin);
+        const confirmLogout = window.confirm("您確定要登出嗎？");
+
+        if (confirmLogout) {
+            setIsLogin(!isLogin);
+        }
     };
 
     return (
@@ -117,18 +123,27 @@ function App() {
                             <Routes>
                                 <Route path="/" element={<HomePage />} />
                                 <Route path="/news" element={<News isLogin={isLogin} />} />
-                                <Route path="/news/:id" element={<NewsDetail isLogin={isLogin} />} />
+                                <Route path="/news/:id" element={<NewsDetail />} />
                                 <Route path="/news/edit/:id" element={<NewsEdit isLogin={isLogin} />} />
                                 <Route path="/about" element={<About />} />
-                                <Route path="/about/:activityId" element={<AboutDetail />} />
+                                <Route path="/about/:activityId" element={<AboutDetail isLogin={isLogin} />} />
+                                <Route path="/about/edit/:activityId" element={<AboutEdit isLogin={isLogin} />} />
                                 <Route path="/contact" element={<Contact />} />
                             </Routes>
                         </div>
                     </main>
 
                     {showLogin && (
-                        <div className="login-overlay">
-                            <div className="login-modal">
+                        <div
+                            className="login-overlay"
+                            onClick={() => {
+                                setShowLogin(false);
+                                setUsername("");
+                                setPassword("");
+                                setError("");
+                            }}
+                        >
+                            <div className="login-modal" onClick={(e) => e.stopPropagation()}>
                                 <h2>登入</h2>
                                 <input type="text" placeholder="帳號" value={username} onChange={(e) => setUsername(e.target.value)} />
                                 <input type="password" placeholder="密碼" value={password} onChange={(e) => setPassword(e.target.value)} />
@@ -158,7 +173,7 @@ function App() {
                             <div>喜樂復興教會</div>
                             <div>
                                 <LocationPinIcon />
-                                <span>高雄市新興區中山一路 xx 號</span>
+                                <span>高雄市新興區中山一路 14 號</span>
                             </div>
                             <div>
                                 <PhoneIcon />
@@ -171,13 +186,13 @@ function App() {
                         </div>
                         <div className="footer-right">
                             <a href="https://www.facebook.com/groups/1404569666890900">
-                                <img src="/jrc-site/icons/facebook.png" alt="Facebook" />
+                                <img src="https://res.cloudinary.com/dtecs6q1u/image/upload/v1746282556/facebook_sitfoq.png" alt="Facebook" />
                             </a>
                             <a href="https://www.instagram.com/joyrevivalchurh77">
-                                <img src="/jrc-site/icons/instagram.png" alt="Instagram" />
+                                <img src="https://res.cloudinary.com/dtecs6q1u/image/upload/v1746282555/instagram_vzig1y.png" alt="Instagram" />
                             </a>
                             <a href="https://www.youtube.com/@jrc7627">
-                                <img src="/jrc-site/icons/youtube.png" alt="YouTube" />
+                                <img src="https://res.cloudinary.com/dtecs6q1u/image/upload/v1746282557/youtube_f0rnqf.png" alt="YouTube" />
                             </a>
                         </div>
                     </footer>

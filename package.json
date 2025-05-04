@@ -19,6 +19,7 @@
         "@mui/material": "^7.0.2",
         "@tinymce/tinymce-react": "^6.1.0",
         "@vis.gl/react-google-maps": "^1.5.2",
+        "axios": "^1.9.0",
         "firebase": "^11.6.1",
         "js-md5": "^0.8.3",
         "react": "^19.0.0",
