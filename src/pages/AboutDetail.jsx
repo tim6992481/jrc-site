@@ -37,7 +37,7 @@ const AboutDetail = (props) => {
                         style={{
                             display: "flex",
                             alignItems: "center",
-                            marginBottom: "30px",
+                            marginBottom: "10px",
                             gap: "10px",
                         }}
                     >
@@ -45,7 +45,7 @@ const AboutDetail = (props) => {
                         <div style={{ fontSize: "24px", fontWeight: "bold", color: "#2c3e50" }}>{activity.title}</div>
                     </div>
 
-                    <div style={{ fontSize: "18px", lineHeight: "1.6" }} dangerouslySetInnerHTML={{ __html: activity.description }} />
+                    <div className="about-content" style={{ fontSize: "18px", lineHeight: "1.6" }} dangerouslySetInnerHTML={{ __html: activity.description }} />
                 </>
             ) : (
                 <div>活動未找到</div>

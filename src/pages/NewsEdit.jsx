@@ -117,7 +117,8 @@ function NewsEdit(props) {
 
     return (
         <div className="news-edit">
-            <div style={{ fontSize: "18px", fontWeight: "bold", color: "red", marginBottom: "20px" }}>*建議使用電腦操作編輯</div>
+            <div style={{ fontSize: "18px", fontWeight: "bold", color: "red", marginBottom: "10px" }}>建議使用電腦操作編輯</div>
+            <div style={{ fontSize: "16px", fontWeight: "bold", color: "red", marginBottom: "20px" }}>圖片和影片寬度建議不超過350px</div>
 
             <div className="form-group">
                 <label>標題</label>
@@ -131,7 +132,7 @@ function NewsEdit(props) {
                         apiKey="qmhxp7p9xdb80g9ujl2hp8cifitmh76ze32x72ahjnxruxfe"
                         value={formData.content}
                         onEditorChange={(content, editor) => {
-                            setFormData((prev) => ({ ...prev, content }));
+                            setFormData((prev) => ({ ...prev, content: content }));
                         }}
                         init={{
                             height: 600,

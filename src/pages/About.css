@@ -134,3 +134,12 @@
 .tox-edit-area iframe {
     resize: none !important;
 }
+
+.about-content {
+    padding: 10px 0;
+    line-height: 1.6;
+    max-width: 100%;
+    overflow-x: visible;
+    box-sizing: border-box;
+    word-wrap: break-word;
+}

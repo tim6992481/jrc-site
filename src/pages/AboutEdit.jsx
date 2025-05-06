@@ -64,7 +64,8 @@ function AboutEdit(props) {
 
     return (
         <div className="about-edit">
-            <div style={{ fontSize: "18px", fontWeight: "bold", color: "red", marginBottom: "20px" }}>*建議使用電腦操作編輯</div>
+            <div style={{ fontSize: "18px", fontWeight: "bold", color: "red", marginBottom: "10px" }}>建議使用電腦操作編輯</div>
+            <div style={{ fontSize: "16px", fontWeight: "bold", color: "red", marginBottom: "20px" }}>圖片和影片寬度建議不超過350px</div>
 
             <div className="form-group">
                 <div className="editor-container">
