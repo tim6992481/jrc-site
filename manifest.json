@@ -3,12 +3,12 @@
     "short_name": "喜樂復興教會",
     "icons": [
         {
-            "src": "/jrc-site/icons/worship-192.png",
+            "src": "https://res.cloudinary.com/dtecs6q1u/image/upload/v1746282557/worship_kdshop.png",
             "sizes": "192x192",
             "type": "image/png"
         },
         {
-            "src": "/jrc-site/icons/worship-512.png",
+            "src": "https://res.cloudinary.com/dtecs6q1u/image/upload/v1746282557/worship_kdshop.png",
             "sizes": "512x512",
             "type": "image/png"
         }
