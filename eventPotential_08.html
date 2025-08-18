@@ -15,15 +15,15 @@
                 margin: 0;
                 padding: 0;
                 font-family: "Noto Sans TC", sans-serif;
-                overflow: hidden; /* 採用成功頁面的設置 */
+                overflow-x: hidden; /* ✅ 允許上下捲動 */
             }
 
             .slide {
-                position: relative;
                 width: 100%;
-                overflow: hidden; /* 避免滾動條 */
-                padding: 1.5rem;
-                box-sizing: border-box;
+                min-height: 720px;
+                position: relative;
+                background: linear-gradient(120deg, #f9f9f9, #f0f8ff);
+                overflow: hidden;
             }
 
             .gradient-bg {
@@ -61,6 +61,22 @@
                 }
             }
 
+            /*.float {
+                animation: float 3s ease-in-out infinite;
+            }*/
+
+            @keyframes float {
+                0% {
+                    transform: translateY(0px);
+                }
+                50% {
+                    transform: translateY(-10px);
+                }
+                100% {
+                    transform: translateY(0px);
+                }
+            }
+
             .highlight-text {
                 text-shadow: 0 0 15px rgba(255, 255, 255, 0.5);
             }
@@ -72,38 +88,23 @@
             }
 
             .contact-card:hover {
+                /* transform: translateY(-5px); */
                 box-shadow: 0 12px 40px rgba(0, 0, 0, 0.15);
-            }
-
-            /* 確保內容區域有足夠空間 */
-            .content-section {
-                flex: 1;
-                display: flex;
-                align-items: center;
-                justify-content: center;
-                width: 100%;
-            }
-
-            @media (max-width: 768px) {
-                .content-section {
-                    flex: none; /* 手機端不使用 flex: 1 */
-                }
             }
         </style>
     </head>
     <body>
-        <div class="slide gradient-bg">
+        <div class="slide gradient-bg flex flex-col items-center justify-between p-6 relative">
             <!-- Background particles -->
-            <div class="absolute inset-0" id="particles"></div>
-
+            <!-- <div class="absolute inset-0" id="particles"></div> -->
             <!-- Header -->
-            <div class="z-10 text-center w-full flex-shrink-0">
+            <div class="z-10 text-center w-full">
                 <h1 class="text-4xl sm:text-6xl lg:text-7xl font-black text-white mb-4 highlight-text">立即行動，點燃未來！</h1>
                 <p class="text-lg sm:text-xl lg:text-2xl text-white font-medium mb-2 max-w-3xl mx-auto">名額有限，尤其是免費的弱勢家庭名額，機會不等人！</p>
+                <!-- <div class="h-1 w-32 bg-white mx-auto rounded-full mb-6"></div> -->
             </div>
-
             <!-- Main content -->
-            <div class="content-section z-10">
+            <div class="z-10 flex justify-center w-full my-4">
                 <div class="bg-transparent md:bg-white md:bg-opacity-20 rounded-2xl md:p-8 backdrop-filter md:backdrop-blur-sm w-full md:w-4/5">
                     <!-- 手機時垂直，桌機時橫向 -->
                     <div class="flex flex-col md:flex-row gap-6">
@@ -169,8 +170,7 @@
                 </div>
             </div>
 
-            <!-- Footer CTA -->
-            <div class="z-10 flex-shrink-0 mt-6">
+            <div class="z-10">
                 <div class="float">
                     <div class="bg-white bg-opacity-20 backdrop-filter backdrop-blur-sm rounded-xl p-6 text-center">
                         <h3 class="text-2xl font-bold text-white mb-2">你的潛力，正等著被釋放！</h3>
@@ -185,7 +185,6 @@
                 </div>
             </div>
         </div>
-
         <script>
             // Create animated background particles
             const particles = d3.select("#particles");
@@ -221,21 +220,21 @@
                 animateParticle();
             }
 
-            // 採用成功頁面的簡單高度計算方式
             function sendHeight() {
-                const minHeight = 600; // 保底高度
-                const realHeight = document.body.scrollHeight;
-                window.parent.postMessage(
-                    {
-                        type: "setHeight",
-                        height: Math.max(minHeight, realHeight),
-                    },
-                    "*"
-                );
+                const height = document.body.scrollHeight;
+                window.parent.postMessage({ type: "setHeight", height }, "*");
             }
 
-            window.onload = sendHeight;
-            window.onresize = sendHeight;
+            window.addEventListener("load", sendHeight);
+            window.addEventListener("resize", sendHeight);
+
+            // function setSlideHeight() {
+            //     document.querySelectorAll(".slide").forEach((el) => {
+            //         el.style.minHeight = window.innerHeight + "px";
+            //     });
+            // }
+            // setSlideHeight();
+            // window.addEventListener("resize", setSlideHeight);
         </script>
     </body>
 </html>
