@@ -219,6 +219,14 @@
 
                 animateParticle();
             }
+
+            function sendHeight() {
+                const minHeight = 600; // 保底高度
+                const realHeight = document.body.scrollHeight;
+                window.parent.postMessage({ type: "setHeight", height: Math.max(minHeight, realHeight) }, "*");
+            }
+            window.onload = sendHeight;
+            window.onresize = sendHeight;
         </script>
         <script>
             function sendHeight() {
