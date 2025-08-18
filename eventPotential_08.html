@@ -187,38 +187,38 @@
         </div>
         <script>
             // Create animated background particles
-            const particles = d3.select("#particles");
+            // const particles = d3.select("#particles");
 
-            for (let i = 0; i < 50; i++) {
-                const size = Math.random() * 8 + 4;
-                const opacity = Math.random() * 0.5 + 0.1;
+            // for (let i = 0; i < 50; i++) {
+            //     const size = Math.random() * 8 + 4;
+            //     const opacity = Math.random() * 0.5 + 0.1;
 
-                const particle = particles
-                    .append("div")
-                    .style("position", "absolute")
-                    .style("width", `${size}px`)
-                    .style("height", `${size}px`)
-                    .style("background-color", "white")
-                    .style("border-radius", "50%")
-                    .style("opacity", opacity)
-                    .style("left", `${Math.random() * 100}%`)
-                    .style("top", `${Math.random() * 100}%`)
-                    .style("pointer-events", "none");
+            //     const particle = particles
+            //         .append("div")
+            //         .style("position", "absolute")
+            //         .style("width", `${size}px`)
+            //         .style("height", `${size}px`)
+            //         .style("background-color", "white")
+            //         .style("border-radius", "50%")
+            //         .style("opacity", opacity)
+            //         .style("left", `${Math.random() * 100}%`)
+            //         .style("top", `${Math.random() * 100}%`)
+            //         .style("pointer-events", "none");
 
-                // Random animation
-                const duration = Math.random() * 20000 + 10000;
+            //     // Random animation
+            //     const duration = Math.random() * 20000 + 10000;
 
-                function animateParticle() {
-                    particle
-                        .transition()
-                        .duration(duration)
-                        .style("left", `${Math.random() * 100}%`)
-                        .style("top", `${Math.random() * 100}%`)
-                        .on("end", animateParticle);
-                }
+            //     function animateParticle() {
+            //         particle
+            //             .transition()
+            //             .duration(duration)
+            //             .style("left", `${Math.random() * 100}%`)
+            //             .style("top", `${Math.random() * 100}%`)
+            //             .on("end", animateParticle);
+            //     }
 
-                animateParticle();
-            }
+            //     animateParticle();
+            // }
 
             function sendHeight() {
                 const height = document.body.scrollHeight;
@@ -227,14 +227,6 @@
 
             window.addEventListener("load", sendHeight);
             window.addEventListener("resize", sendHeight);
-
-            // function setSlideHeight() {
-            //     document.querySelectorAll(".slide").forEach((el) => {
-            //         el.style.minHeight = window.innerHeight + "px";
-            //     });
-            // }
-            // setSlideHeight();
-            // window.addEventListener("resize", setSlideHeight);
         </script>
     </body>
 </html>
