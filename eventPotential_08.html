@@ -221,17 +221,12 @@
             }
 
             function sendHeight() {
-                const height = document.documentElement.scrollHeight; // ✅ 比 body.scrollHeight 更準
+                const height = document.body.scrollHeight;
                 window.parent.postMessage({ type: "setHeight", height }, "*");
             }
 
-            // 初始
             window.addEventListener("load", sendHeight);
-            // 監聽 resize
             window.addEventListener("resize", sendHeight);
-            // 動態內容監聽
-            const observer = new MutationObserver(sendHeight);
-            observer.observe(document.body, { childList: true, subtree: true, characterData: true });
 
             // function setSlideHeight() {
             //     document.querySelectorAll(".slide").forEach((el) => {
