@@ -20,7 +20,7 @@
 
             .slide {
                 width: 100%;
-                min-height: 100dvh;
+                min-height: 100vh;
                 position: relative;
                 background: linear-gradient(120deg, #f9f9f9, #f0f8ff);
                 overflow: hidden;
@@ -221,20 +221,20 @@
             }
 
             function sendHeight() {
-                const minHeight = 600; // 保底高度
-                const realHeight = document.body.scrollHeight;
-                window.parent.postMessage({ type: "setHeight", height: Math.max(minHeight, realHeight) }, "*");
+                const height = document.body.scrollHeight;
+                window.parent.postMessage({ type: "setHeight", height }, "*");
             }
-            window.onload = sendHeight;
-            window.onresize = sendHeight;
 
-            function setSlideHeight() {
-                document.querySelectorAll(".slide").forEach((el) => {
-                    el.style.minHeight = window.innerHeight + "px";
-                });
-            }
-            setSlideHeight();
-            window.addEventListener("resize", setSlideHeight);
+            window.addEventListener("load", sendHeight);
+            window.addEventListener("resize", sendHeight);
+
+            // function setSlideHeight() {
+            //     document.querySelectorAll(".slide").forEach((el) => {
+            //         el.style.minHeight = window.innerHeight + "px";
+            //     });
+            // }
+            // setSlideHeight();
+            // window.addEventListener("resize", setSlideHeight);
         </script>
     </body>
 </html>
