@@ -1,0 +1,171 @@
+<!DOCTYPE html>
+<html lang="zh-TW">
+    <head>
+        <meta charset="UTF-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <title>志工獎勵：感謝您的溫暖陪伴</title>
+        <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" rel="stylesheet" />
+        <script src="https://cdn.tailwindcss.com/"></script>
+        <style>
+            body {
+                font-family: "Noto Sans TC", sans-serif;
+                margin: 0;
+                padding: 0;
+                overflow: hidden;
+            }
+            .slide {
+                width: 100%;
+                min-height: 100vh;
+                background: linear-gradient(135deg, #fef9e7 0%, #e8f8f5 100%);
+                color: #333;
+            }
+            .slide-header {
+                background: linear-gradient(90deg, #f39c12 0%, #f1c40f 100%);
+                color: white;
+                padding: 15px 40px;
+                border-radius: 0 0 30px 0;
+                box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+            }
+            .reward-card {
+                background-color: white;
+                border-radius: 15px;
+                box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+                transition: transform 0.3s ease;
+            }
+            .reward-card:hover {
+                transform: translateY(-5px);
+            }
+            .certificate-image {
+                border: 10px solid white;
+                box-shadow: 0 8px 16px rgba(0, 0, 0, 0.15);
+            }
+            .reward-icon {
+                font-size: 2.5rem;
+                width: 80px;
+                height: 80px;
+                display: flex;
+                align-items: center;
+                justify-content: center;
+                border-radius: 50%;
+            }
+            .sparkle {
+                position: absolute;
+                font-size: 1.5rem;
+                color: #f1c40f;
+                animation: sparkle 2s infinite;
+                opacity: 0.8;
+            }
+            @keyframes sparkle {
+                0% {
+                    transform: scale(1);
+                    opacity: 0.8;
+                }
+                50% {
+                    transform: scale(1.2);
+                    opacity: 1;
+                }
+                100% {
+                    transform: scale(1);
+                    opacity: 0.8;
+                }
+            }
+            @media (max-width: 768px) {
+                .slide {
+                    padding: 0;
+                }
+                .slide-header {
+                    padding: 15px 20px;
+                }
+                .slide-header h1 {
+                    font-size: 1.5rem;
+                }
+                .main-content {
+                    flex-direction: column;
+                    padding: 20px;
+                }
+                .certificate-image img {
+                    width: 100%;
+                    max-width: 400px;
+                }
+            }
+        </style>
+    </head>
+    <body>
+        <div class="slide">
+            <!-- Header -->
+            <div class="slide-header w-full">
+                <h1 class="text-2xl md:text-3xl font-bold">志工獎勵：感謝您的溫暖陪伴</h1>
+            </div>
+
+            <!-- Main Content -->
+            <div class="main-content p-6 flex flex-col md:flex-row min-h-[620px]">
+                <!-- 左側圖片 -->
+                <div class="w-full md:w-1/2 flex items-center justify-center mb-9 mt-3 md:mb-9">
+                    <div class="certificate-image rounded-lg overflow-hidden transform rotate-3">
+                        <img class="w-full max-w-[450px]" src="https://picture-search.skywork.ai/aippt/image/sheet/3acc48b983d3c5f9162f5313eb3922f5.jpg" alt="頒發志工證書" />
+                    </div>
+                </div>
+
+                <!-- 右側文字 -->
+                <div class="w-full md:w-1/2 flex flex-col justify-center space-y-6">
+                    <!-- Milestone Banner -->
+                    <div class="bg-amber-100 text-amber-800 py-4 px-6 rounded-lg text-center">
+                        <h2 class="text-xl md:text-2xl font-bold">
+                            <i class="fas fa-medal mr-2"></i>
+                            服務滿20小時，您將獲得：
+                        </h2>
+                    </div>
+
+                    <!-- Reward Cards -->
+                    <!-- Reward 1 -->
+                    <div class="reward-card p-4 flex items-center w-full">
+                        <div class="reward-icon bg-blue-100 text-blue-600 flex-shrink-0">
+                            <i class="fas fa-certificate"></i>
+                        </div>
+                        <div class="ml-4">
+                            <h3 class="text-lg font-bold mb-1">正式志工服務證明書</h3>
+                            <p class="text-gray-700 text-sm">依據「志願服務法」相關規範，核發正式志工服務證明，可作為升學或求職的重要佐證資料。</p>
+                        </div>
+                    </div>
+
+                    <!-- Reward 2 -->
+                    <div class="reward-card p-4 flex items-center w-full">
+                        <div class="reward-icon bg-red-100 text-red-600 flex-shrink-0">
+                            <i class="fas fa-award"></i>
+                        </div>
+                        <div class="ml-4">
+                            <h3 class="text-lg font-bold mb-1">感謝狀</h3>
+                            <p class="text-gray-700 text-sm">頒發精美感謝狀，表彰您為單親兒童付出的愛心與時間，是對您無私奉獻的肯定。</p>
+                        </div>
+                    </div>
+
+                    <!-- Reward 3 -->
+                    <div class="reward-card p-4 flex items-center w-full">
+                        <div class="reward-icon bg-green-100 text-green-600 flex-shrink-0">
+                            <i class="fas fa-gift"></i>
+                        </div>
+                        <div class="ml-4">
+                            <h3 class="text-lg font-bold mb-1">精美禮物</h3>
+                            <p class="text-gray-700 text-sm">獲贈精心準備的禮物一份，以表達我們對您溫暖陪伴的誠摯謝意。</p>
+                        </div>
+                    </div>
+
+                    <!-- Thank you message -->
+                    <div class="text-center mt-4">
+                        <p class="text-lg font-bold text-orange-600">
+                            <i class="fas fa-heart text-red-500 mr-2"></i>
+                            感謝您為孩子們的童年點亮一盞溫暖的燈！
+                        </p>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <script>
+            function sendHeight() {
+                window.parent.postMessage({ type: "setHeight", height: document.body.scrollHeight }, "*");
+            }
+            window.onload = sendHeight;
+            window.onresize = sendHeight;
+        </script>
+    </body>
+</html>

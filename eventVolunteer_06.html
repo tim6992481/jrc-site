@@ -1,0 +1,205 @@
+<!DOCTYPE html>
+<html lang="zh-TW">
+    <head>
+        <meta charset="UTF-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <title>報名流程：加入我們的行列</title>
+        <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" rel="stylesheet" />
+        <script src="https://cdn.tailwindcss.com/"></script>
+        <style>
+            body {
+                font-family: "Noto Sans TC", sans-serif;
+                margin: 0;
+                padding: 0;
+                overflow: hidden;
+            }
+            .slide {
+                width: 100%;
+                min-height: 100vh;
+                background: linear-gradient(135deg, #fef9e7 0%, #e8f8f5 100%);
+                color: #333;
+            }
+            .slide-header {
+                background: linear-gradient(90deg, #f39c12 0%, #f1c40f 100%);
+                color: white;
+                padding: 15px 40px;
+                border-radius: 0 0 30px 0;
+                box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+            }
+            .step-card {
+                background-color: white;
+                border-radius: 15px;
+                box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+                transition: transform 0.3s ease;
+                position: relative;
+            }
+            .step-card:hover {
+                transform: translateY(-5px);
+            }
+            .step-number {
+                position: absolute;
+                top: -15px;
+                left: -15px;
+                width: 40px;
+                height: 40px;
+                background: linear-gradient(135deg, #f39c12 0%, #f1c40f 100%);
+                border-radius: 50%;
+                display: flex;
+                align-items: center;
+                justify-content: center;
+                color: white;
+                font-weight: bold;
+                font-size: 1.5rem;
+                box-shadow: 0 3px 6px rgba(0, 0, 0, 0.2);
+            }
+            .arrow-connector {
+                color: #f39c12;
+                font-size: 2.5rem;
+                margin: 0 0.5rem;
+            }
+            @media (max-width: 1024px) {
+                .steps-container {
+                    flex-direction: column;
+                    align-items: center;
+                    gap: 2rem;
+                }
+                .arrow-connector {
+                    transform: rotate(90deg);
+                }
+                .step-card {
+                    width: 100%;
+                    max-width: 300px;
+                }
+            }
+            @media (max-width: 768px) {
+                @media (max-width: 768px) {
+                    /* Slide padding 調整 */
+                    .slide {
+                        padding: 0;
+                    }
+                    .slide-header {
+                        padding: 15px 20px;
+                    }
+                    .slide-header h1 {
+                        font-size: 1.5rem;
+                    }
+
+                    /* Hero image 調整 */
+                    .hero-image {
+                        width: 90%;
+                        height: 200px;
+                    }
+
+                    .arrow-connector {
+                        transform: rotate(90deg);
+                        font-size: 2rem;
+                        margin: 0.5rem 0; /* 上下間距縮小 */
+                    }
+
+                    .steps-container {
+                        flex-direction: column !important;
+                        align-items: center;
+                        gap: 0rem; /* 步驟卡片間距縮小 */
+                        padding: 0 15px;
+                    }
+
+                    .step-card {
+                        width: 100% !important;
+                        max-width: 400px;
+                    }
+                }
+            }
+        </style>
+    </head>
+    <body>
+        <div class="slide">
+            <!-- Header -->
+            <div class="slide-header w-full">
+                <h1 class="text-2xl md:text-3xl font-bold">報名流程：加入我們的行列</h1>
+            </div>
+
+            <!-- Main Content -->
+            <div class="p-6">
+                <!-- Top Image -->
+                <div class="flex justify-center mb-10 mt-2">
+                    <div class="hero-image relative rounded-xl overflow-hidden w-full max-w-md h-40 shadow-lg">
+                        <img alt="孩子們的活動" class="w-full h-full object-cover" src="https://picture-search.skywork.ai/aippt/image/sheet/88d5b690d572745a6bfc0b56ebb63f3b.jpg" />
+                        <div class="absolute inset-0 bg-gradient-to-t from-yellow-500/70 to-transparent flex items-end justify-center pb-3">
+                            <p class="text-white font-bold text-lg">成為孩子們生命中的溫暖陽光</p>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Steps Container -->
+                <div class="steps-container flex justify-between items-center px-10 mt-4">
+                    <!-- Step 1 -->
+                    <div class="step-card p-4 flex flex-col items-center text-center">
+                        <div class="step-number">1</div>
+                        <i class="fas fa-file-download text-5xl text-blue-500 mb-4"></i>
+                        <h3 class="text-xl font-bold mb-2">下載報名表</h3>
+                        <p class="text-gray-700">掃描海報上的QR Code或至官方網站下載志工報名表</p>
+                    </div>
+
+                    <!-- Arrow 1 -->
+                    <div class="arrow-connector">
+                        <i class="fas fa-chevron-right"></i>
+                    </div>
+
+                    <!-- Step 2 -->
+                    <div class="step-card p-4 flex flex-col items-center text-center">
+                        <div class="step-number">2</div>
+                        <i class="fas fa-edit text-5xl text-green-500 mb-4"></i>
+                        <h3 class="text-xl font-bold mb-2">填寫資料</h3>
+                        <p class="text-gray-700">詳細填寫個人基本資料、可服務時段以及您的專長</p>
+                    </div>
+
+                    <!-- Arrow 2 -->
+                    <div class="arrow-connector">
+                        <i class="fas fa-chevron-right"></i>
+                    </div>
+
+                    <!-- Step 3 -->
+                    <div class="step-card p-4 flex flex-col items-center text-center">
+                        <div class="step-number">3</div>
+                        <i class="fas fa-paper-plane text-5xl text-red-500 mb-4"></i>
+                        <h3 class="text-xl font-bold mb-2">寄送申請</h3>
+                        <p class="text-gray-700">將填寫完成的報名表Email至我們的信箱，主旨請註明「應徵愛心課輔志工」</p>
+                    </div>
+
+                    <!-- Arrow 3 -->
+                    <div class="arrow-connector">
+                        <i class="fas fa-chevron-right"></i>
+                    </div>
+
+                    <!-- Step 4 -->
+                    <div class="step-card p-4 flex flex-col items-center text-center">
+                        <div class="step-number">4</div>
+                        <i class="fas fa-bell text-5xl text-purple-500 mb-4"></i>
+                        <h3 class="text-xl font-bold mb-2">等待通知</h3>
+                        <p class="text-gray-700">我們在收到您的申請後，將有專人盡快與您聯繫，安排面談與說明會事宜</p>
+                    </div>
+                </div>
+
+                <!-- Bottom Note -->
+                <div class="mt-8 flex justify-center">
+                    <div class="bg-amber-50 p-5 rounded-lg shadow-md max-w-2xl flex items-center">
+                        <div class="w-12 h-12 flex items-center justify-center rounded-full mr-4">
+                            <i class="fas fa-lightbulb text-2xl text-amber-600"></i>
+                        </div>
+                        <div>
+                            <h3 class="font-bold text-lg text-amber-800 mb-1">溫馨提醒</h3>
+                            <p class="text-gray-700">報名表填寫越詳細，我們越能安排適合您的志工服務內容。若您有任何疑問，歡迎隨時與我們聯繫！</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <script>
+            function sendHeight() {
+                window.parent.postMessage({ type: "setHeight", height: document.body.scrollHeight }, "*");
+            }
+            window.onload = sendHeight;
+            window.onresize = sendHeight;
+        </script>
+    </body>
+</html>

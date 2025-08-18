@@ -1,0 +1,234 @@
+<!DOCTYPE html>
+<html lang="zh-TW">
+    <head>
+        <meta charset="UTF-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <title>志工福利與認證</title>
+        <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" rel="stylesheet" />
+        <script src="https://d3js.org/d3.v7.min.js"></script>
+        <script src="https://cdn.tailwindcss.com/"></script>
+        <style>
+            body {
+                font-family: "Noto Sans TC", sans-serif;
+                margin: 0;
+                padding: 0;
+                overflow: hidden;
+            }
+            .slide {
+                width: 100%;
+                min-height: 100vh;
+                background: linear-gradient(135deg, #fef9e7 0%, #e8f8f5 100%);
+                color: #333;
+            }
+            .slide-header {
+                background: linear-gradient(90deg, #f39c12 0%, #f1c40f 100%);
+                color: white;
+                padding: 15px 40px;
+                border-radius: 0 0 30px 0;
+                box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+            }
+            .info-card {
+                background-color: white;
+                border-radius: 15px;
+                box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+                transition: transform 0.3s ease;
+            }
+            .info-card:hover {
+                transform: translateY(-5px);
+            }
+            .certificate-image {
+                position: relative;
+                background-color: #f9f3e5;
+                border: 8px solid #e6d7b8;
+                box-shadow: 0 10px 15px rgba(0, 0, 0, 0.1);
+            }
+            .certificate-image::before {
+                content: "";
+                position: absolute;
+                top: 0;
+                left: 0;
+                right: 0;
+                bottom: 0;
+                background: url("data:image/svg+xml,%3Csvg width='100' height='100' viewBox='0 0 100 100' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath d='M50 25L62.5 43.3L82.5 46.6L66.3 60.7L70.5 80.6L50 71.3L29.5 80.6L33.7 60.7L17.5 46.6L37.5 43.3L50 25Z' fill='%23f1c40f' fill-opacity='0.1'/%3E%3C/svg%3E")
+                    repeat;
+                opacity: 0.2;
+            }
+
+            @media (max-width: 768px) {
+                .slide-header {
+                    padding: 15px 20px;
+                }
+
+                .slide-header h1 {
+                    font-size: 1.5rem;
+                }
+            }
+        </style>
+    </head>
+    <body>
+        <div class="slide">
+            <!-- Header -->
+            <div class="slide-header w-full">
+                <h1 class="text-2xl md:text-3xl font-bold">志工福利與認證：您的付出被看見</h1>
+            </div>
+
+            <!-- Main Content -->
+            <div class="p-6 grid grid-cols-1 lg:grid-cols-12 gap-6 min-h-[620px]">
+                <!-- Left Column: Time Recording and Certification -->
+                <div class="lg:col-span-6 flex flex-col gap-6 h-full">
+                    <!-- Time Recording Card -->
+                    <div class="info-card p-6 flex-1">
+                        <div class="flex items-center mb-4">
+                            <div class="w-12 h-12 flex items-center justify-center bg-amber-100 rounded-full mr-4 shadow">
+                                <i class="fas fa-clock text-xl text-amber-600"></i>
+                            </div>
+
+                            <h3 class="text-xl font-bold">時數計入與認證</h3>
+                        </div>
+                        <ul class="space-y-4 mt-4">
+                            <li class="flex items-start">
+                                <i class="fas fa-check-circle text-green-500 mt-1 mr-3"></i>
+                                <span>依據「志願服務法」相關規範，確實登錄您的服務時數</span>
+                            </li>
+                            <li class="flex items-start">
+                                <i class="fas fa-check-circle text-green-500 mt-1 mr-3"></i>
+                                <span>服務時數以實際投入課輔、伴讀、活動帶領等服務內容的時間為準</span>
+                            </li>
+                            <li class="flex items-start">
+                                <i class="fas fa-check-circle text-green-500 mt-1 mr-3"></i>
+                                <span>由專人負責記錄與認證，確保您的每一份付出都被珍視</span>
+                            </li>
+                        </ul>
+                    </div>
+
+                    <div class="certificate-image p-8 flex-1 flex flex-col items-center justify-center">
+                        <div class="text-center mb-6">
+                            <h3 class="text-2xl font-bold text-amber-800 mb-2">志工服務證明書</h3>
+                            <p class="text-amber-700">服務滿20小時即可申請</p>
+                        </div>
+                        <div class="w-full flex justify-center mb-4">
+                            <i class="fas fa-certificate text-7xl text-amber-500 opacity-80"></i>
+                        </div>
+                        <div class="text-center">
+                            <p class="text-lg mb-2">感謝您為孩子們的童年點亮一盞溫暖的燈</p>
+                            <p class="italic text-gray-600">This certificate is awarded in recognition of your dedicated volunteer service</p>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Right Column: Certificate Details -->
+                <div class="lg:col-span-6 flex flex-col gap-6 h-full">
+                    <!-- Hour Progress Card -->
+                    <div class="info-card p-6 flex-1">
+                        <div class="flex items-center mb-4">
+                            <div class="w-12 h-12 flex items-center justify-center bg-blue-100 rounded-full mr-4 shadow">
+                                <i class="fas fa-chart-line text-xl text-blue-600"></i>
+                            </div>
+                            <h3 class="text-xl font-bold">志工時數里程碑</h3>
+                        </div>
+
+                        <!-- Progress bar 漸層版 -->
+                        <div class="mt-8">
+                            <div class="flex justify-between mb-2 text-sm font-medium text-gray-600">
+                                <span>0 小時</span>
+                                <span>10 小時</span>
+                                <span>20 小時</span>
+                            </div>
+
+                            <div class="relative w-full h-4 rounded-full">
+                                <!-- 漸層進度條 -->
+                                <div class="h-4 rounded-full" style="background: linear-gradient(to right, #e2e8f0 0%, #3b82f6 100%)"></div>
+                                <!-- 起點 -->
+                                <div class="absolute top-1/2 -translate-y-1/2 left-0 w-7 h-7 bg-white border-2 rounded-full"></div>
+                                <!-- 終點 -->
+                                <div class="absolute top-1/2 -translate-y-1/2 right-0 w-7 h-7 bg-blue-600 border-2 rounded-full"></div>
+                            </div>
+
+                            <div class="flex justify-between mt-2 text-xs text-gray-500">
+                                <span class="text-sm">開始</span>
+                                <span class="text-blue-600 font-semibold text-xl">取得證明</span>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Benefits Card -->
+                    <div class="info-card p-6 flex-1">
+                        <div class="flex items-center mb-4">
+                            <div class="w-12 h-12 flex items-center justify-center bg-green-100 rounded-full mr-4 shadow">
+                                <i class="fas fa-award text-2xl text-green-600"></i>
+                            </div>
+                            <h3 class="text-xl font-bold">證明書價值</h3>
+                        </div>
+                        <div class="grid grid-cols-1 md:grid-cols-2 gap-4 mt-4">
+                            <div class="bg-gray-50 p-4 rounded-lg">
+                                <div class="flex items-center mb-2">
+                                    <i class="fas fa-graduation-cap text-purple-500 mr-2"></i>
+                                    <span class="font-semibold">升學加分</span>
+                                </div>
+                                <p class="text-sm text-gray-600">作為升學時的重要佐證資料，展現您的社會責任感</p>
+                            </div>
+                            <div class="bg-gray-50 p-4 rounded-lg">
+                                <div class="flex items-center mb-2">
+                                    <i class="fas fa-briefcase text-blue-500 mr-2"></i>
+                                    <span class="font-semibold">求職優勢</span>
+                                </div>
+                                <p class="text-sm text-gray-600">豐富您的履歷，展現您的愛心與責任感</p>
+                            </div>
+                            <div class="bg-gray-50 p-4 rounded-lg">
+                                <div class="flex items-center mb-2">
+                                    <i class="fas fa-hands-helping text-red-500 mr-2"></i>
+                                    <span class="font-semibold">服務經驗</span>
+                                </div>
+                                <p class="text-sm text-gray-600">獲得有價值的志工服務經驗，提升個人軟實力</p>
+                            </div>
+                            <div class="bg-gray-50 p-4 rounded-lg">
+                                <div class="flex items-center mb-2">
+                                    <i class="fas fa-heart text-pink-500 mr-2"></i>
+                                    <span class="font-semibold">回饋社會</span>
+                                </div>
+                                <p class="text-sm text-gray-600">為社會貢獻一份心力，創造更美好的未來</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <script>
+            // Create progress bar visualization using D3.js
+            document.addEventListener("DOMContentLoaded", function () {
+                const container = d3.select("#progress-container");
+
+                // Create SVG
+                const svg = container.append("svg").attr("width", "100%").attr("height", 30).attr("viewBox", "0 0 500 30").attr("preserveAspectRatio", "none");
+
+                // Background bar
+                svg.append("rect").attr("x", 0).attr("y", 0).attr("width", 500).attr("height", 30).attr("rx", 15).attr("ry", 15).attr("fill", "#e2e8f0");
+
+                // Progress gradient
+                const gradient = svg.append("defs").append("linearGradient").attr("id", "progressGradient").attr("x1", "0%").attr("x2", "100%").attr("y1", "0%").attr("y2", "0%");
+
+                gradient.append("stop").attr("offset", "0%").attr("stop-color", "#f39c12");
+
+                gradient.append("stop").attr("offset", "100%").attr("stop-color", "#f1c40f");
+
+                // Progress bar (50% completion - 10 out of 20 hours)
+                svg.append("rect").attr("x", 0).attr("y", 0).attr("width", 250).attr("height", 30).attr("rx", 15).attr("ry", 15).attr("fill", "url(#progressGradient)");
+
+                // Add milestone markers
+                svg.append("circle").attr("cx", 0).attr("cy", 15).attr("r", 8).attr("fill", "#fff").attr("stroke", "#f39c12").attr("stroke-width", 3);
+
+                svg.append("circle").attr("cx", 250).attr("cy", 15).attr("r", 8).attr("fill", "#fff").attr("stroke", "#f39c12").attr("stroke-width", 3);
+
+                svg.append("circle").attr("cx", 500).attr("cy", 15).attr("r", 10).attr("fill", "#fff").attr("stroke", "#3182ce").attr("stroke-width", 3);
+            });
+        </script>
+        <script>
+            function sendHeight() {
+                window.parent.postMessage({ type: "setHeight", height: document.body.scrollHeight }, "*");
+            }
+            window.onload = sendHeight;
+            window.onresize = sendHeight;
+        </script>
+    </body>
+</html>

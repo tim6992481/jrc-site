@@ -1,0 +1,231 @@
+<!DOCTYPE html>
+<html lang="zh-TW">
+    <head>
+        <meta charset="utf-8" />
+        <meta content="width=device-width, initial-scale=1.0" name="viewport" />
+        <title>學科課程：1-5人小班制</title>
+
+        <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" rel="stylesheet" />
+        <script src="https://cdn.tailwindcss.com"></script>
+        <style>
+            body {
+                margin: 0;
+                padding: 0;
+                font-family: "Noto Sans TC", sans-serif;
+                overflow: hidden;
+            }
+            .slide {
+                width: 100%;
+                min-height: 720px;
+                position: relative;
+            }
+            .gradient-bg {
+                background: linear-gradient(135deg, #f9f9f9, #f0f8ff);
+            }
+            .title {
+                background: linear-gradient(90deg, #6366f1, #8b5cf6);
+                -webkit-background-clip: text;
+                background-clip: text;
+                color: transparent;
+                text-shadow: 0px 2px 4px rgba(0, 0, 0, 0.1);
+            }
+            .course-card {
+                border-radius: 12px;
+                transition: all 0.3s ease;
+            }
+            .course-card:hover {
+                transform: translateY(-5px);
+                box-shadow: 0 15px 30px rgba(0, 0, 0, 0.1);
+            }
+            .card-header {
+                height: 80px;
+                display: flex;
+                align-items: center;
+                justify-content: center;
+                color: white;
+                font-weight: bold;
+                font-size: 1.25rem;
+                border-top-left-radius: 12px;
+                border-top-right-radius: 12px;
+            }
+            .small-class-feature {
+                background: rgba(255, 255, 255, 0.9);
+                border-radius: 12px;
+                box-shadow: 0 8px 20px rgba(0, 0, 0, 0.1);
+                transition: all 0.3s ease;
+            }
+            .small-class-feature:hover {
+                transform: translateY(-3px);
+                box-shadow: 0 12px 25px rgba(0, 0, 0, 0.15);
+            }
+            .feature-icon {
+                width: 50px;
+                height: 50px;
+                border-radius: 50%;
+                display: flex;
+                align-items: center;
+                justify-content: center;
+                margin-bottom: 10px;
+                font-size: 1.5rem;
+            }
+        </style>
+    </head>
+    <body>
+        <div class="slide gradient-bg">
+            <!-- <div class="absolute top-0 right-0 w-96 h-96 bg-purple-200 rounded-full opacity-20 -mt-20 -mr-20"></div> -->
+            <!-- <div class="absolute bottom-0 left-0 w-64 h-64 bg-yellow-200 rounded-full opacity-20 -mb-20 -ml-10"></div> -->
+            <div class="content p-6 md:p-10 flex flex-col">
+                <!-- Title Section -->
+                <div class="mb-6">
+                    <h1 class="title text-3xl md:text-4xl font-bold mb-2">學科課程：1-5人小班制</h1>
+                    <div class="h-1 w-32 bg-gradient-to-r from-purple-500 to-indigo-500 rounded-full"></div>
+                </div>
+                <!-- Main Content -->
+                <div class="flex flex-col md:flex-row flex-1">
+                    <!-- Left Side: Small Class Benefits -->
+                    <div class="w-full md:w-1/4 md:pr-6 flex flex-col justify-center mb-8 md:mb-0">
+                        <div class="rounded-xl overflow-hidden mb-6 shadow-lg">
+                            <img alt="小班教學" class="w-full h-48 md:h-64 object-cover" src="https://picture-search.skywork.ai/aippt/image/sheet/70d1c35e9d62d4bb43544bd35bfc2e4d.jpg" />
+                        </div>
+                        <h3 class="text-xl font-bold text-gray-800 mb-4">小班制優勢</h3>
+                        <div class="space-y-4">
+                            <div class="small-class-feature p-3 flex items-center">
+                                <div class="feature-icon bg-blue-100 text-blue-600 mr-3">
+                                    <i class="fas fa-user-check"></i>
+                                </div>
+                                <div>
+                                    <h4 class="font-bold text-gray-800">個人化關注</h4>
+                                    <p class="text-sm text-gray-600">針對學習盲點，給予個人化輔導</p>
+                                </div>
+                            </div>
+                            <div class="small-class-feature p-3 flex items-center">
+                                <div class="feature-icon bg-green-100 text-green-600 mr-3">
+                                    <i class="fas fa-comments"></i>
+                                </div>
+                                <div>
+                                    <h4 class="font-bold text-gray-800">高效率互動</h4>
+                                    <p class="text-sm text-gray-600">更多提問與討論機會，學習不再被動</p>
+                                </div>
+                            </div>
+                            <div class="small-class-feature p-3 flex items-center">
+                                <div class="feature-icon bg-amber-100 text-amber-600 mr-3">
+                                    <i class="fas fa-tasks"></i>
+                                </div>
+                                <div>
+                                    <h4 class="font-bold text-gray-800">客製化進度</h4>
+                                    <p class="text-sm text-gray-600">根據吸收狀況調整節奏，穩固基礎</p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <!-- Right Side: Courses -->
+                    <div class="w-full md:w-3/4 md:pl-6">
+                        <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
+                            <!-- English Class -->
+                            <div class="course-card bg-white shadow-lg flex flex-col">
+                                <div class="card-header bg-blue-500">
+                                    <div class="flex items-center">
+                                        <i class="fas fa-language text-3xl mr-3"></i>
+                                        <span>英文班 (English Power-Up)</span>
+                                    </div>
+                                </div>
+                                <div class="p-5 flex-1 flex flex-col">
+                                    <div class="mb-3">
+                                        <h4 class="font-bold text-blue-700 mb-1">學習目標</h4>
+                                        <p class="text-gray-700">從死背單字到活用英語，建立流利溝通的自信</p>
+                                    </div>
+                                    <div>
+                                        <h4 class="font-bold text-blue-700 mb-1">課程內容</h4>
+                                        <ul class="list-disc pl-5 text-gray-700 space-y-1">
+                                            <li>系統化文法解析</li>
+                                            <li>情境式會話練習</li>
+                                            <li>閱讀素養與寫作技巧培養</li>
+                                        </ul>
+                                    </div>
+                                </div>
+                            </div>
+                            <!-- Math Class -->
+                            <div class="course-card bg-white shadow-lg flex flex-col">
+                                <div class="card-header bg-green-500">
+                                    <div class="flex items-center">
+                                        <i class="fas fa-square-root-alt text-3xl mr-3"></i>
+                                        <span>數學班 (Math Logic Lab)</span>
+                                    </div>
+                                </div>
+                                <div class="p-5 flex-1 flex flex-col">
+                                    <div class="mb-3">
+                                        <h4 class="font-bold text-green-700 mb-1">學習目標</h4>
+                                        <p class="text-gray-700">打破數學恐懼，培養邏輯思維與解題超能力</p>
+                                    </div>
+                                    <div>
+                                        <h4 class="font-bold text-green-700 mb-1">課程內容</h4>
+                                        <ul class="list-disc pl-5 text-gray-700 space-y-1">
+                                            <li>核心觀念釐清</li>
+                                            <li>獨家解題技巧傳授</li>
+                                            <li>跨單元整合應用</li>
+                                        </ul>
+                                    </div>
+                                </div>
+                            </div>
+                            <!-- Physics Class -->
+                            <div class="course-card bg-white shadow-lg flex flex-col">
+                                <div class="card-header bg-amber-500">
+                                    <div class="flex items-center">
+                                        <i class="fas fa-atom text-3xl mr-3"></i>
+                                        <span>物理班 (Physics Explorer)</span>
+                                    </div>
+                                </div>
+                                <div class="p-5 flex-1 flex flex-col">
+                                    <div class="mb-3">
+                                        <h4 class="font-bold text-amber-700 mb-1">學習目標</h4>
+                                        <p class="text-gray-700">將抽象的物理定律，轉化為探索世界的樂趣</p>
+                                    </div>
+                                    <div>
+                                        <h4 class="font-bold text-amber-700 mb-1">課程內容</h4>
+                                        <ul class="list-disc pl-5 text-gray-700 space-y-1">
+                                            <li>生活化實例講解</li>
+                                            <li>圖像化概念教學</li>
+                                            <li>實驗精神培養</li>
+                                        </ul>
+                                    </div>
+                                </div>
+                            </div>
+                            <!-- Chemistry Class -->
+                            <div class="course-card bg-white shadow-lg flex flex-col">
+                                <div class="card-header bg-purple-500">
+                                    <div class="flex items-center">
+                                        <i class="fas fa-flask text-3xl mr-3"></i>
+                                        <span>化學班 (Chemistry Magic)</span>
+                                    </div>
+                                </div>
+                                <div class="p-5 flex-1 flex flex-col">
+                                    <div class="mb-3">
+                                        <h4 class="font-bold text-purple-700 mb-1">學習目標</h4>
+                                        <p class="text-gray-700">揭開化學反應的神秘面紗，成為元素週期表的魔法師</p>
+                                    </div>
+                                    <div>
+                                        <h4 class="font-bold text-purple-700 mb-1">課程內容</h4>
+                                        <ul class="list-disc pl-5 text-gray-700 space-y-1">
+                                            <li>分子結構視覺化</li>
+                                            <li>化學反應規律剖析</li>
+                                            <li>動手做實驗</li>
+                                        </ul>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <script>
+            function sendHeight() {
+                const height = document.body.scrollHeight;
+                window.parent.postMessage({ type: "setHeight", height }, "*");
+            }
+
+            window.addEventListener("load", sendHeight);
+            window.addEventListener("resize", sendHeight);
+        </script>
+    </body>
+</html>

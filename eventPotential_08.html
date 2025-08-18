@@ -1,0 +1,234 @@
+<!DOCTYPE html>
+<html lang="zh-TW">
+    <head>
+        <meta charset="utf-8" />
+        <meta content="width=device-width, initial-scale=1.0" name="viewport" />
+        <title>立即行動，點燃未來！</title>
+
+        <script src="https://d3js.org/d3.v7.min.js"></script>
+        <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" rel="stylesheet" />
+        <script src="https://cdn.tailwindcss.com"></script>
+        <style>
+            /* @import url("https://fonts.googleapis.com/css2?family=Noto+Sans+TC:wght@400;500;700;900&display=swap"); */
+
+            body {
+                width: 100%;
+                min-height: 100vh;
+                margin: 0;
+                padding: 0;
+                font-family: "Noto Sans TC", sans-serif;
+                overflow: hidden;
+            }
+
+            .slide {
+                width: 100%;
+                min-height: 720px;
+                position: relative;
+                background: linear-gradient(120deg, #f9f9f9, #f0f8ff);
+                overflow: hidden;
+            }
+
+            .gradient-bg {
+                background: linear-gradient(135deg, #ff9966, #ff6b6b, #9370db, #6a5acd);
+                background-size: 400% 400%;
+                animation: gradient 15s ease infinite;
+            }
+
+            @keyframes gradient {
+                0% {
+                    background-position: 0% 50%;
+                }
+                50% {
+                    background-position: 100% 50%;
+                }
+                100% {
+                    background-position: 0% 50%;
+                }
+            }
+
+            .pulse {
+                margin-top: 15px;
+                animation: pulse 2s infinite;
+            }
+
+            @keyframes pulse {
+                0% {
+                    transform: scale(1);
+                }
+                50% {
+                    transform: scale(1.05);
+                }
+                100% {
+                    transform: scale(1);
+                }
+            }
+
+            /*.float {
+                animation: float 3s ease-in-out infinite;
+            }*/
+
+            @keyframes float {
+                0% {
+                    transform: translateY(0px);
+                }
+                50% {
+                    transform: translateY(-10px);
+                }
+                100% {
+                    transform: translateY(0px);
+                }
+            }
+
+            .highlight-text {
+                text-shadow: 0 0 15px rgba(255, 255, 255, 0.5);
+            }
+
+            .contact-card {
+                backdrop-filter: blur(10px);
+                box-shadow: 0 8px 32px rgba(0, 0, 0, 0.1);
+                transition: transform 0.3s ease, box-shadow 0.3s ease;
+            }
+
+            .contact-card:hover {
+                /* transform: translateY(-5px); */
+                box-shadow: 0 12px 40px rgba(0, 0, 0, 0.15);
+            }
+        </style>
+    </head>
+    <body>
+        <div class="slide gradient-bg flex flex-col items-center justify-between p-6 relative">
+            <!-- Background particles -->
+            <div class="absolute inset-0" id="particles"></div>
+            <!-- Header -->
+            <div class="z-10 text-center w-full">
+                <h1 class="text-4xl sm:text-6xl lg:text-7xl font-black text-white mb-4 highlight-text">立即行動，點燃未來！</h1>
+                <p class="text-lg sm:text-xl lg:text-2xl text-white font-medium mb-2 max-w-3xl mx-auto">名額有限，尤其是免費的弱勢家庭名額，機會不等人！</p>
+                <!-- <div class="h-1 w-32 bg-white mx-auto rounded-full mb-6"></div> -->
+            </div>
+            <!-- Main content -->
+            <div class="z-10 flex justify-center w-full my-4">
+                <div class="bg-transparent md:bg-white md:bg-opacity-20 rounded-2xl md:p-8 backdrop-filter md:backdrop-blur-sm w-full md:w-4/5">
+                    <!-- 手機時垂直，桌機時橫向 -->
+                    <div class="flex flex-col md:flex-row gap-6">
+                        <!-- Left side: Location -->
+                        <div class="flex-1">
+                            <div class="contact-card bg-white bg-opacity-90 rounded-xl p-6 h-full flex flex-col justify-between">
+                                <!-- 標題 -->
+                                <div class="flex items-center mb-4">
+                                    <div class="w-12 h-12 rounded-full bg-purple-600 flex items-center justify-center mr-4">
+                                        <i class="fas fa-map-marker-alt text-white text-2xl"></i>
+                                    </div>
+                                    <h3 class="text-2xl font-bold text-purple-800">課程地點</h3>
+                                </div>
+                                <!-- 地址 -->
+                                <div class="flex-1 flex flex-col justify-center items-center text-center gap-4">
+                                    <div class="bg-purple-100 rounded-lg p-4 w-full">
+                                        <p class="text-xl text-purple-800 font-bold">高雄市新興區</p>
+                                        <p class="text-xl text-purple-700 font-bold">中山一路14號 6F-8</p>
+                                        <br />
+                                        <p class="text-xl text-purple-700 font-bold">(近高雄捷運中央公園站)</p>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- Right side: Contact methods -->
+                        <div class="flex-1">
+                            <div class="contact-card bg-white bg-opacity-90 rounded-xl p-6 h-full flex flex-col justify-between">
+                                <!-- 標題 -->
+                                <div class="flex items-center mb-4">
+                                    <div class="w-12 h-12 rounded-full bg-indigo-600 flex items-center justify-center mr-4">
+                                        <i class="fas fa-phone-alt text-white text-2xl"></i>
+                                    </div>
+                                    <h3 class="text-2xl font-bold text-indigo-800">聯絡方式</h3>
+                                </div>
+                                <!-- 聯絡資訊 -->
+                                <div class="flex-1 flex flex-col gap-4">
+                                    <div class="flex items-center p-3 bg-indigo-50 rounded-lg">
+                                        <i class="fas fa-phone-alt text-indigo-600 text-xl mr-3"></i>
+                                        <div>
+                                            <p class="text-sm text-indigo-600 font-medium">電話</p>
+                                            <p class="text-lg text-indigo-800 font-bold">07-123-4567</p>
+                                        </div>
+                                    </div>
+                                    <div class="flex items-center p-3 bg-indigo-50 rounded-lg">
+                                        <i class="fas fa-envelope text-indigo-600 text-xl mr-3"></i>
+                                        <div>
+                                            <p class="text-sm text-indigo-600 font-medium">Email</p>
+                                            <p class="text-lg text-indigo-800 font-bold break-all">contact@potentialprogram.tw</p>
+                                        </div>
+                                    </div>
+                                    <div class="flex items-center p-3 bg-indigo-50 rounded-lg">
+                                        <i class="fab fa-instagram text-indigo-600 text-xl mr-3"></i>
+                                        <div>
+                                            <p class="text-sm text-indigo-600 font-medium">社群媒體</p>
+                                            <p class="text-lg text-indigo-800 font-bold">@potentialprogram</p>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="z-10">
+                <div class="float">
+                    <div class="bg-white bg-opacity-20 backdrop-filter backdrop-blur-sm rounded-xl p-6 text-center">
+                        <h3 class="text-2xl font-bold text-white mb-2">你的潛力，正等著被釋放！</h3>
+                        <p class="text-xl text-white">我們在這裡，等你一起，創造屬於你的精彩故事！</p>
+                        <!-- 呼叫行動 -->
+                        <a href="https://forms.gle/GdWMrjHedfrq3PRK6" target="_blank" rel="noopener noreferrer" class="pulse mx-auto block">
+                            <div class="bg-gradient-to-r from-yellow-400 to-orange-500 text-white text-center py-4 px-6 rounded-lg shadow-lg">
+                                <p class="text-lg font-bold">現在立即報名！</p>
+                            </div>
+                        </a>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <script>
+            // Create animated background particles
+            const particles = d3.select("#particles");
+
+            for (let i = 0; i < 50; i++) {
+                const size = Math.random() * 8 + 4;
+                const opacity = Math.random() * 0.5 + 0.1;
+
+                const particle = particles
+                    .append("div")
+                    .style("position", "absolute")
+                    .style("width", `${size}px`)
+                    .style("height", `${size}px`)
+                    .style("background-color", "white")
+                    .style("border-radius", "50%")
+                    .style("opacity", opacity)
+                    .style("left", `${Math.random() * 100}%`)
+                    .style("top", `${Math.random() * 100}%`)
+                    .style("pointer-events", "none");
+
+                // Random animation
+                const duration = Math.random() * 20000 + 10000;
+
+                function animateParticle() {
+                    particle
+                        .transition()
+                        .duration(duration)
+                        .style("left", `${Math.random() * 100}%`)
+                        .style("top", `${Math.random() * 100}%`)
+                        .on("end", animateParticle);
+                }
+
+                animateParticle();
+
+                function sendHeight() {
+                    const minHeight = 600; // 保底高度
+                    const realHeight = document.body.scrollHeight;
+                    window.parent.postMessage({ type: "setHeight", height: Math.max(minHeight, realHeight) }, "*");
+                }
+                window.onload = sendHeight;
+                window.onresize = sendHeight;
+            }
+        </script>
+    </body>
+</html>

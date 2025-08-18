@@ -1,0 +1,256 @@
+<!DOCTYPE html>
+<html lang="zh-TW">
+    <head>
+        <meta charset="UTF-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <title>志工招募海報</title>
+        <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css" rel="stylesheet" />
+        <style>
+            @import url("https://fonts.googleapis.com/css2?family=Noto+Sans+TC:wght@400;500;700&display=swap");
+
+            * {
+                margin: 0;
+                padding: 0;
+                box-sizing: border-box;
+            }
+
+            body {
+                font-family: "Noto Sans TC", sans-serif;
+                width: 100%;
+                overflow: hidden;
+            }
+
+            .slide {
+                width: 100%;
+                position: relative;
+                background: linear-gradient(135deg, #ffe259 0%, #ffa751 100%);
+            }
+
+            .title-shadow {
+                text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.2);
+            }
+
+            .image-frame {
+                box-shadow: 0 10px 20px rgba(0, 0, 0, 0.1);
+                border: 8px solid white;
+                border-radius: 0.5rem;
+                transform: rotate(-2deg);
+            }
+
+            .icon-box {
+                width: 80px;
+                height: 80px;
+                border-radius: 50%;
+                display: flex;
+                align-items: center;
+                justify-content: center;
+                box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+                background: white;
+            }
+
+            .decorative-circle {
+                position: absolute;
+                border-radius: 50%;
+            }
+
+            .circle-1 {
+                top: 2.5rem;
+                left: 2.5rem;
+                width: 80px;
+                height: 80px;
+                background: #fef08a;
+                opacity: 0.4;
+            }
+
+            .circle-2 {
+                bottom: 5rem;
+                right: 5rem;
+                width: 128px;
+                height: 128px;
+                background: #fde047;
+                opacity: 0.3;
+            }
+
+            .circle-3 {
+                top: 25%;
+                right: 5rem;
+                width: 64px;
+                height: 64px;
+                background: #fed7aa;
+                opacity: 0.5;
+            }
+
+            .main-content {
+                display: flex;
+                flex-direction: column;
+                align-items: center;
+                justify-content: center;
+                height: 100%;
+                position: relative;
+                z-index: 10;
+                padding: 2rem;
+            }
+
+            .styled-image {
+                width: 500px;
+                object-fit: cover;
+                border: 8px solid white; /* 外框 */
+                border-radius: 0.5rem; /* 圓角 */
+                box-shadow: 0 10px 20px rgba(0, 0, 0, 0.1); /* 陰影 */
+                transform: rotate(-2deg); /* 旋轉 */
+                display: block; /* 避免 inline img 預設空隙 */
+            }
+
+            .main-title {
+                font-size: 2.25rem;
+                font-weight: 700;
+                text-align: center;
+                color: #1f2937;
+                margin-top: 2rem;
+                margin-bottom: 1rem;
+                line-height: 1.25;
+                max-width: 56rem;
+            }
+
+            .subtitle {
+                font-size: 3rem;
+                line-height: 1;
+                color: #dc2626;
+            }
+
+            .activity-icons {
+                display: flex;
+                justify-content: center;
+                gap: 1.25rem;
+                margin-top: 1.5rem;
+            }
+
+            .description {
+                font-size: 1.25rem;
+                color: #1f2937;
+                margin-top: 1.5rem;
+                text-align: center;
+                max-width: 48rem;
+            }
+
+            .call-to-action {
+                margin-top: 2rem;
+                background: white;
+                padding: 0.75rem 1.5rem;
+                border-radius: 9999px;
+                box-shadow: 0 10px 15px -3px rgba(0, 0, 0, 0.1);
+            }
+
+            .cta-text {
+                font-size: 1.125rem;
+                font-weight: 700;
+                color: #ea580c;
+            }
+
+            .icon-orange {
+                color: #f97316;
+            }
+            .icon-green {
+                color: #22c55e;
+            }
+            .icon-blue {
+                color: #3b82f6;
+            }
+            .icon-purple {
+                color: #a855f7;
+            }
+            .icon-red {
+                color: #ef4444;
+            }
+
+            @media (max-width: 768px) {
+                .main-image {
+                    width: 90%;
+                    max-width: 400px;
+                }
+
+                .main-title {
+                    font-size: 1.5rem;
+                }
+
+                .subtitle {
+                    font-size: 2rem;
+                }
+
+                .activity-icons {
+                    gap: 0.75rem;
+                }
+
+                .icon-box {
+                    width: 60px;
+                    height: 60px;
+                }
+
+                .description {
+                    font-size: 1rem;
+                }
+
+                .cta-text {
+                    font-size: 1rem;
+                }
+            }
+        </style>
+    </head>
+    <body>
+        <div class="slide">
+            <!-- 裝飾元素 -->
+            <div class="decorative-circle circle-1"></div>
+            <div class="decorative-circle circle-2"></div>
+            <div class="decorative-circle circle-3"></div>
+
+            <!-- 主要內容 -->
+            <div class="main-content">
+                <!-- 主圖片 -->
+                <img alt="志工與孩子互動" class="main-image styled-image" src="https://picture-search.skywork.ai/aippt/image/sheet/97f0fb8be2b73567ad07f81b5d688fb7.jpg" />
+
+                <!-- 標題 -->
+                <h1 class="main-title title-shadow">
+                    點亮童年，用愛陪伴<br />
+                    <span class="subtitle">單親兒童課後天使志工熱情招募中！</span>
+                </h1>
+
+                <!-- 活動圖標 -->
+                <div class="activity-icons">
+                    <div class="icon-box">
+                        <i class="fas fa-book-open fa-2x icon-orange"></i>
+                    </div>
+                    <div class="icon-box">
+                        <i class="fas fa-paint-brush fa-2x icon-green"></i>
+                    </div>
+                    <div class="icon-box">
+                        <i class="fas fa-music fa-2x icon-blue"></i>
+                    </div>
+                    <div class="icon-box">
+                        <i class="fas fa-language fa-2x icon-purple"></i>
+                    </div>
+                    <div class="icon-box">
+                        <i class="fas fa-heart fa-2x icon-red"></i>
+                    </div>
+                </div>
+
+                <!-- 描述文字 -->
+                <p class="description">課輔・伴讀・美勞・唱跳・英文詩歌 | 陪伴孩子快樂成長 | 志工時數認證</p>
+
+                <!-- 行動呼籲 -->
+                <div class="call-to-action">
+                    <p class="cta-text">
+                        <i class="fas fa-certificate" style="margin-right: 0.5rem"></i>
+                        服務滿20小時，獲頒志工證明與精美禮物！
+                    </p>
+                </div>
+            </div>
+        </div>
+        <script>
+            function sendHeight() {
+                window.parent.postMessage({ type: "setHeight", height: document.body.scrollHeight }, "*");
+            }
+            window.onload = sendHeight;
+            window.onresize = sendHeight;
+        </script>
+    </body>
+</html>

@@ -1,0 +1,174 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="utf-8" />
+        <meta content="width=device-width, initial-scale=1.0" name="viewport" />
+        <title>超強師資陣容：你的人生嚮導</title>
+
+        <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" rel="stylesheet" />
+        <script src="https://cdn.tailwindcss.com"></script>
+        <style>
+            body {
+                margin: 0;
+                padding: 0;
+                font-family: "Noto Sans TC", sans-serif;
+                overflow-x: hidden;
+            }
+            .slide {
+                width: 100%;
+                min-height: 720px;
+                position: relative;
+                background: linear-gradient(120deg, #f9f9f9, #f0f8ff);
+            }
+            .slide::before {
+                position: absolute;
+                top: 0;
+                left: 0;
+                width: 100%;
+                height: 100%;
+                background: radial-gradient(circle at bottom left, rgba(147, 112, 219, 0.15), transparent 60%);
+                z-index: 0;
+            }
+            .content {
+                position: relative;
+                z-index: 1;
+                padding: 2rem;
+            }
+            .title {
+                background: linear-gradient(90deg, #6366f1, #8b5cf6);
+                -webkit-background-clip: text;
+                background-clip: text;
+                color: transparent;
+                text-shadow: 0px 2px 4px rgba(0, 0, 0, 0.1);
+            }
+            .card {
+                border-radius: 12px;
+                box-shadow: 0 10px 15px -3px rgba(0, 0, 0, 0.1), 0 4px 6px -2px rgba(0, 0, 0, 0.05);
+                transition: transform 0.3s ease, box-shadow 0.3s ease;
+            }
+            .card:hover {
+                transform: translateY(-5px);
+                box-shadow: 0 20px 25px -5px rgba(0, 0, 0, 0.1), 0 10px 10px -5px rgba(0, 0, 0, 0.04);
+            }
+            .teacher-icon {
+                width: 60px;
+                height: 60px;
+                border-radius: 50%;
+                display: flex;
+                align-items: center;
+                justify-content: center;
+                margin-bottom: 1rem;
+            }
+            .highlight {
+                position: relative;
+                display: inline-block;
+            }
+            .highlight::after {
+                content: "";
+                position: absolute;
+                bottom: 0;
+                left: 0;
+                width: 100%;
+                height: 30%;
+                background-color: rgba(250, 204, 21, 0.4);
+                z-index: -1;
+                border-radius: 4px;
+            }
+        </style>
+    </head>
+    <body>
+        <div class="slide">
+            <div class="content p-6 md:p-10 flex flex-col">
+                <!-- Title -->
+                <div class="mb-6">
+                    <h1 class="title text-3xl md:text-4xl font-bold mb-2">超強師資陣容：你的人生嚮導</h1>
+                    <div class="h-1 w-32 bg-gradient-to-r from-purple-500 to-indigo-500 rounded-full"></div>
+                </div>
+
+                <!-- Main Content -->
+                <div class="flex flex-col lg:flex-row gap-6">
+                    <!-- Left Side -->
+                    <div class="w-full lg:w-2/5 flex flex-col gap-6">
+                        <div class="rounded-xl overflow-hidden shadow-lg">
+                            <img alt="師生互動" class="w-full h-48 md:h-64 object-cover" src="https://picture-search.skywork.ai/aippt/image/sheet/a4f6eebfc97b96f91bb360319d423717.jpg" />
+                        </div>
+                        <div class="bg-gradient-to-r from-purple-600 to-indigo-500 text-white p-6 rounded-xl shadow-lg flex-1">
+                            <h3 class="text-xl font-bold mb-3">不只是老師，更是你的人生嚮導！</h3>
+                            <p class="text-lg mb-4">在這裡，教學的不只是課本裡的知識，更是一群真心渴望拉你一把、陪你前進的「神隊友」。</p>
+                            <p class="text-lg">
+                                每一位老師都經過嚴格篩選</span>，他們不僅擁有頂尖的專業能力，更重要的是，他們都有一顆溫暖、願意付出的心。
+                            </p>
+                        </div>
+                    </div>
+
+                    <!-- Right Side: Cards -->
+                    <div class="w-full lg:w-3/5 grid grid-rows-3 gap-6">
+                        <!-- Card 1 -->
+                        <div class="card bg-white p-6 flex flex-col md:flex-row items-center">
+                            <div class="teacher-icon bg-amber-100 flex-shrink-0 mb-4 md:mb-0">
+                                <i class="fas fa-graduation-cap text-3xl text-amber-500"></i>
+                            </div>
+                            <div class="flex-1 md:ml-4 text-center md:text-left">
+                                <h3 class="text-2xl font-bold text-gray-800 mb-3">來自頂尖國立大學的學霸們</h3>
+                                <div class="flex gap-4 flex-wrap mb-3 justify-center md:justify-start">
+                                    <span class="bg-amber-100 text-amber-700 px-3 py-1 rounded-full text-sm font-medium"><i class="fas fa-check-circle mr-1"></i>貼近學生</span>
+                                    <span class="bg-amber-100 text-amber-700 px-3 py-1 rounded-full text-sm font-medium"><i class="fas fa-check-circle mr-1"></i>高效學習</span>
+                                    <span class="bg-amber-100 text-amber-700 px-3 py-1 rounded-full text-sm font-medium"><i class="fas fa-check-circle mr-1"></i>親和力強</span>
+                                </div>
+                                <p class="text-gray-600 mt-2">
+                                    他們是來自台灣頂尖國立大學的在學生，不久前才和你一樣，在學海中奮鬥，因此<span class="font-bold text-amber-500">最懂你的學習痛點與迷惘</span>。
+                                </p>
+                                <p class="text-gray-600 mt-3">除了傳授解題技巧，更會分享獨門的讀書方法、時間管理與應考策略。</p>
+                            </div>
+                        </div>
+
+                        <!-- Card 2 -->
+                        <div class="card bg-white p-6 flex flex-col md:flex-row items-center">
+                            <div class="teacher-icon bg-blue-100 flex-shrink-0 mb-4 md:mb-0">
+                                <i class="fas fa-briefcase text-3xl text-blue-500"></i>
+                            </div>
+                            <div class="flex-1 md:ml-4 text-center md:text-left">
+                                <h3 class="text-2xl font-bold text-gray-800 mb-3">來自各行各業的菁英領航員</h3>
+                                <div class="flex gap-4 flex-wrap mb-3 justify-center md:justify-start">
+                                    <span class="bg-blue-100 text-blue-700 px-3 py-1 rounded-full text-sm font-medium"><i class="fas fa-laptop-code mr-1"></i>工程師</span>
+                                    <span class="bg-blue-100 text-blue-700 px-3 py-1 rounded-full text-sm font-medium"><i class="fas fa-chalkboard-teacher mr-1"></i>現任教師</span>
+                                    <span class="bg-blue-100 text-blue-700 px-3 py-1 rounded-full text-sm font-medium"><i class="fas fa-building mr-1"></i>公教人員</span>
+                                </div>
+                                <p class="text-gray-600 mt-2">他們是社會上發光發熱的專業人士，選擇在工作之餘投入教學，是出於一份<span class="font-bold text-blue-500">回饋社會的熱忱</span>。</p>
+                                <p class="text-gray-600 mt-3">將真實世界的工作經驗與人生智慧融入課堂，帶你跳脫課本框架。</p>
+                            </div>
+                        </div>
+
+                        <!-- Card 3 -->
+                        <div class="card bg-white p-6 flex flex-col md:flex-row items-center">
+                            <div class="teacher-icon bg-green-100 flex-shrink-0 mb-4 md:mb-0">
+                                <i class="fas fa-chalkboard-teacher text-3xl text-green-500"></i>
+                            </div>
+                            <div class="flex-1 md:ml-4 text-center md:text-left">
+                                <h3 class="text-2xl font-bold text-gray-800 mb-3">專業導師一對一輔導</h3>
+                                <div class="flex gap-4 flex-wrap mb-3 justify-center md:justify-start">
+                                    <span class="bg-green-100 text-green-700 px-3 py-1 rounded-full text-sm font-medium"><i class="fas fa-check-circle mr-1"></i>量身規劃</span>
+                                    <span class="bg-green-100 text-green-700 px-3 py-1 rounded-full text-sm font-medium"><i class="fas fa-check-circle mr-1"></i>針對弱點</span>
+                                </div>
+                                <p class="text-gray-600 mt-2">每位學生都會有專屬導師，針對學習上的弱點提供個人化輔導，確保成效最大化。</p>
+                                <p class="text-gray-600 mt-3">導師除了課業輔導，也會分享學習策略與職涯建議，陪伴你走完整個學習旅程。</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- 自動回傳高度至上層（iframe 專用） -->
+        <script>
+            function updateHeight() {
+                const height = document.body.scrollHeight;
+                if (window.parent) {
+                    window.parent.postMessage({ type: "setHeight", height: height }, "*");
+                }
+            }
+            window.addEventListener("load", updateHeight);
+            window.addEventListener("resize", updateHeight);
+        </script>
+    </body>
+</html>

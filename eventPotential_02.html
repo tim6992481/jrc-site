@@ -1,0 +1,151 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="utf-8" />
+        <meta content="width=device-width, initial-scale=1.0" name="viewport" />
+        <title>計劃概述：讓人生不再空白</title>
+
+        <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" rel="stylesheet" />
+        <script src="https://cdn.tailwindcss.com"></script>
+        <style>
+            body {
+                margin: 0;
+                padding: 0;
+                font-family: "Noto Sans TC", sans-serif;
+                overflow-x: hidden; /* 允許垂直滾動，但隱藏水平 */
+            }
+            .slide {
+                position: relative;
+                width: 100%;
+                background: linear-gradient(120deg, #f9f9f9, #f0f8ff);
+                z-index: 0;
+            }
+            .content {
+                position: relative;
+                z-index: 1;
+            }
+            .title {
+                background: linear-gradient(90deg, #6366f1, #8b5cf6);
+                -webkit-background-clip: text;
+                background-clip: text;
+                color: transparent;
+                text-shadow: 0px 2px 4px rgba(0, 0, 0, 0.1);
+            }
+            .highlight {
+                position: relative;
+                display: inline-block;
+            }
+            .highlight::after {
+                position: absolute;
+                bottom: 0;
+                left: 0;
+                width: 100%;
+                height: 30%;
+                background-color: rgba(250, 204, 21, 0.4);
+                z-index: -1;
+                border-radius: 4px;
+            }
+            .card {
+                border-radius: 12px;
+                box-shadow: 0 10px 15px -3px rgba(0, 0, 0, 0.1), 0 4px 6px -2px rgba(0, 0, 0, 0.05);
+                transition: transform 0.3s ease;
+            }
+            .card:hover {
+                transform: translateY(-5px);
+                box-shadow: 0px 20px 25px -5px rgba(0, 0, 0, 0.1), 0 10px 10px -5px rgba(0, 0, 0, 0.04);
+            }
+            .icon-circle {
+                width: 64px;
+                height: 64px;
+                border-radius: 50%;
+                display: flex;
+                align-items: center;
+                justify-content: center;
+            }
+        </style>
+    </head>
+    <body>
+        <div class="slide bg-white">
+            <div class="content p-6 md:p-10 flex flex-col">
+                <!-- Title Section -->
+                <div class="mb-6">
+                    <h1 class="title text-3xl md:text-4xl font-bold mb-2">計劃概述：讓人生不再空白</h1>
+                    <div class="h-1 w-24 md:w-32 bg-gradient-to-r from-purple-500 to-indigo-500 rounded-full"></div>
+                </div>
+                <!-- Main Content -->
+                <div class="flex flex-col md:flex-row">
+                    <!-- Left Side -->
+                    <div class="md:w-2/5 md:pr-6 flex flex-col mb-6 md:mb-0">
+                        <div class="rounded-xl overflow-hidden mb-6 shadow-lg">
+                            <img alt="小班制教學" class="w-full h-48 md:h-64 object-cover" src="https://picture-search.skywork.ai/aippt/image/sheet/0fdcd8790318ffff02fea6c438a38609_crop.jpg" />
+                        </div>
+                        <div class="bg-gradient-to-r from-indigo-500 to-purple-600 text-white p-5 rounded-xl shadow-lg flex-1">
+                            <h3 class="text-lg md:text-xl font-bold mb-3">我們的願景</h3>
+                            <p class="text-base md:text-lg">我們相信，每個青少年都擁有無限潛能，不應因環境而受限。透過<span class="highlight">跨級學習</span>，點亮屬於自己的璀璨人生！</p>
+                        </div>
+                    </div>
+                    <!-- Right Side -->
+                    <div class="w-full md:w-3/5 md:pl-6">
+                        <div class="grid grid-cols-1 md:grid-cols-2 gap-6 justify-items-center md:justify-items-start">
+                            <!-- Card 1 -->
+                            <div class="card bg-white p-6 flex flex-row md:flex-col items-center md:items-start w-full max-w-md">
+                                <div class="icon-circle bg-amber-100 flex-shrink-0 mb-0 md:mb-4 mr-4 md:mr-0">
+                                    <i class="fas fa-heart text-2xl md:text-3xl text-amber-500"></i>
+                                </div>
+                                <div class="text-center md:text-left">
+                                    <h3 class="text-lg md:text-xl font-bold text-gray-800 mb-2">完全免費的機會</h3>
+                                    <p class="text-gray-600 text-sm md:text-base">
+                                        為弱勢家庭學子提供<span class="font-bold text-amber-500">一年期、完全免費</span>的課程，僅收2,000元保證金（全勤退還）
+                                    </p>
+                                </div>
+                            </div>
+                            <!-- Card 2 -->
+                            <div class="card bg-white p-6 flex flex-row md:flex-col items-center md:items-start w-full max-w-md">
+                                <div class="icon-circle bg-green-100 flex-shrink-0 mb-0 md:mb-4 mr-4 md:mr-0">
+                                    <i class="fas fa-user-graduate text-2xl md:text-3xl text-green-500"></i>
+                                </div>
+                                <div class="text-center md:text-left">
+                                    <h3 class="text-lg md:text-xl font-bold text-gray-800 mb-2">神級師資陣容</h3>
+                                    <p class="text-gray-600 text-sm md:text-base">
+                                        由<span class="font-bold text-green-500">國立大學學霸</span>及<span class="font-bold text-green-500">各行各業菁英</span>親自指導
+                                    </p>
+                                </div>
+                            </div>
+                            <!-- Card 3 -->
+                            <div class="card bg-white p-6 flex flex-row md:flex-col items-center md:items-start w-full max-w-md">
+                                <div class="icon-circle bg-blue-100 flex-shrink-0 mb-0 md:mb-4 mr-4 md:mr-0">
+                                    <i class="fas fa-users text-2xl md:text-3xl text-blue-500"></i>
+                                </div>
+                                <div class="text-center md:text-left">
+                                    <h3 class="text-lg md:text-xl font-bold text-gray-800 mb-2">超精緻小班制</h3>
+                                    <p class="text-gray-600 text-sm md:text-base">採用<span class="font-bold text-blue-500">1-5人小班制</span>，確保每位同學都能獲得個人化指導</p>
+                                </div>
+                            </div>
+                            <!-- Card 4 -->
+                            <div class="card bg-white p-6 flex flex-row md:flex-col items-center md:items-start w-full max-w-md">
+                                <div class="icon-circle bg-purple-100 flex-shrink-0 mb-0 md:mb-4 mr-4 md:mr-0">
+                                    <i class="fas fa-book-open text-2xl md:text-3xl text-purple-500"></i>
+                                </div>
+                                <div class="text-center md:text-left flex-1">
+                                    <h3 class="text-lg md:text-xl font-bold text-gray-800 mb-2">多元豐富課程</h3>
+                                    <p class="text-gray-600 text-sm md:text-base">
+                                        提供<span class="font-bold text-purple-500">學科輔導</span>與<span class="font-bold text-purple-500">才藝課程</span>
+                                    </p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- 自動調整 iframe 高度 -->
+        <script>
+            function sendHeight() {
+                window.parent.postMessage({ type: "setHeight", height: document.body.scrollHeight }, "*");
+            }
+            window.onload = sendHeight;
+            window.onresize = sendHeight;
+        </script>
+    </body>
+</html>

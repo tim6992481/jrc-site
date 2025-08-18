@@ -1,0 +1,157 @@
+<!DOCTYPE html>
+<html lang="zh-TW">
+    <head>
+        <meta charset="utf-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <title>點燃你的宇宙！潛力開發計畫</title>
+
+        <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css" rel="stylesheet" />
+        <script src="https://cdn.tailwindcss.com"></script>
+
+        <style>
+            /* @import url("https://fonts.googleapis.com/css2?family=Noto+Sans+TC:wght@400;500;700;900&display=swap"); */
+
+            body {
+                margin: 0;
+                padding: 0;
+                font-family: "Noto Sans TC", sans-serif;
+                overflow: hidden;
+            }
+
+            .slide {
+                position: relative;
+                width: 100%;
+                height: 100vh; /* 固定為視窗高度 */
+                overflow: hidden; /* 避免滾動條 */
+            }
+
+            .gradient-bg {
+                background: linear-gradient(135deg, #ff9966, #ff6b6b, #9370db, #6a5acd);
+                background-size: 400% 400%;
+                animation: gradient 15s ease infinite;
+            }
+
+            @keyframes gradient {
+                0% {
+                    background-position: 0% 50%;
+                }
+                50% {
+                    background-position: 100% 50%;
+                }
+                100% {
+                    background-position: 0% 50%;
+                }
+            }
+
+            .star {
+                position: absolute;
+                background-color: white;
+                border-radius: 50%;
+                animation: twinkle 2s infinite alternate;
+            }
+
+            .stars-container {
+                position: absolute;
+                top: 0;
+                left: 0;
+                width: 100%;
+                height: 100%;
+                overflow: hidden;
+                z-index: 0;
+                pointer-events: none; /* 避免阻擋點擊 */
+            }
+
+            @keyframes twinkle {
+                from {
+                    opacity: 0.2;
+                    transform: scale(0.8);
+                }
+                to {
+                    opacity: 1;
+                    transform: scale(1);
+                }
+            }
+
+            .highlight-text {
+                text-shadow: 0 0 15px rgba(255, 255, 255, 0.5);
+            }
+            .glow {
+                animation: glow 2s ease-in-out infinite alternate;
+            }
+
+            @keyframes glow {
+                from {
+                    box-shadow: 0 0 10px -10px rgba(255, 255, 255, 0.8);
+                }
+                to {
+                    box-shadow: 0 0 20px 10px rgba(255, 255, 255, 0.8);
+                }
+            }
+        </style>
+    </head>
+    <body>
+        <div class="slide gradient-bg flex flex-col items-center justify-center relative min-h-screen w-full">
+            <!-- Stars background -->
+            <div id="stars-container"></div>
+            <!-- Content container -->
+            <div class="z-10 text-center px-6 sm:px-12">
+                <!-- Main title -->
+                <h1 class="text-4xl sm:text-6xl lg:text-7xl font-black text-white mb-6 highlight-text leading-tight">點燃你的宇宙！<br />潛力開發計畫</h1>
+                <!-- Subtitle -->
+                <p class="text-lg sm:text-xl lg:text-2xl text-white font-medium mb-10 max-w-3xl mx-auto leading-relaxed">
+                    為弱勢學子打造的跨級學習平台<br />
+                    讓你的人生不再空白，綻放屬於自己的光芒
+                </p>
+                <!-- Features -->
+                <div class="flex flex-wrap justify-center gap-6 mb-12">
+                    <div class="bg-white bg-opacity-20 rounded-lg p-4 backdrop-filter backdrop-blur-sm glow w-36">
+                        <i class="fas fa-users text-2xl sm:text-3xl text-white mb-2"></i>
+                        <p class="text-white text-sm sm:text-base font-medium">1-5人小班制</p>
+                    </div>
+                    <div class="bg-white bg-opacity-20 rounded-lg p-4 backdrop-filter backdrop-blur-sm glow w-36">
+                        <i class="fas fa-graduation-cap text-2xl sm:text-3xl text-white mb-2"></i>
+                        <p class="text-white text-sm sm:text-base font-medium">頂尖師資團隊</p>
+                    </div>
+                    <div class="bg-white bg-opacity-20 rounded-lg p-4 backdrop-filter backdrop-blur-sm glow w-36">
+                        <i class="fas fa-guitar text-2xl sm:text-3xl text-white mb-2"></i>
+                        <p class="text-white text-sm sm:text-base font-medium">多元才藝課程</p>
+                    </div>
+                    <div class="bg-white bg-opacity-20 rounded-lg p-4 backdrop-filter backdrop-blur-sm glow w-36">
+                        <i class="fas fa-hand-holding-heart text-2xl sm:text-3xl text-white mb-2"></i>
+                        <p class="text-white text-sm sm:text-base font-medium">弱勢學生免費</p>
+                    </div>
+                </div>
+                <!-- Location -->
+                <p class="text-base sm:text-lg text-white font-medium mt-6"><i class="fas fa-map-marker-alt mr-2"></i>高雄市新興區中山一路14號 6F-8</p>
+            </div>
+        </div>
+
+        <script>
+            // Create twinkling stars effect
+            const starsContainer = document.getElementById("stars-container");
+            for (let i = 0; i < 100; i++) {
+                const star = document.createElement("div");
+                star.className = "star";
+
+                const size = Math.random() * 3 + 1;
+                star.style.width = `${size}px`;
+                star.style.height = `${size}px`;
+
+                star.style.left = `${Math.random() * 100}%`;
+                star.style.top = `${Math.random() * 100}%`;
+
+                star.style.animationDelay = `${Math.random() * 2}s`;
+                starsContainer.appendChild(star);
+            }
+
+            // 自動調整 iframe 高度
+            function sendHeight() {
+                const minHeight = 600; // 保底高度
+                const realHeight = document.body.scrollHeight;
+                window.parent.postMessage({ type: "setHeight", height: Math.max(minHeight, realHeight) }, "*");
+            }
+            window.onload = sendHeight;
+            window.onresize = sendHeight;
+        </script>
+    </body>
+</html>

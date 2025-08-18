@@ -1,0 +1,224 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="utf-8" />
+        <meta content="width=device-width, initial-scale=1.0" name="viewport" />
+        <title>招生對象與方案</title>
+
+        <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" rel="stylesheet" />
+        <script src="https://d3js.org/d3.v7.min.js"></script>
+        <script src="https://cdn.tailwindcss.com"></script>
+        <style>
+            body {
+                margin: 0;
+                padding: 0;
+                font-family: "Noto Sans TC", sans-serif;
+                overflow: hidden;
+            }
+            .slide {
+                width: 100%;
+                min-height: 720px;
+                position: relative;
+                background: linear-gradient(120deg, #f9f9f9, #f0f8ff);
+                overflow: hidden;
+            }
+            .gradient-bg {
+                background: linear-gradient(120deg, #f9f9f9, #f0f8ff);
+            }
+            .title {
+                background: linear-gradient(90deg, #6366f1, #8b5cf6);
+                -webkit-background-clip: text;
+                background-clip: text;
+                color: transparent;
+                text-shadow: 0px 2px 4px rgba(0, 0, 0, 0.1);
+            }
+            .card {
+                border-radius: 16px;
+                box-shadow: 0 10px 25px -5px rgba(0, 0, 0, 0.1), 0 10px 10px -5px rgba(0, 0, 0, 0.04);
+                transition: all 0.3s ease;
+            }
+            .card:hover {
+                transform: translateY(-5px);
+                box-shadow: 0 20px 25px -5px rgba(0, 0, 0, 0.1), 0 10px 10px -5px rgba(0, 0, 0, 0.04);
+            }
+            .highlight-text {
+                position: relative;
+                display: inline-block;
+            }
+            .highlight-text::after {
+                content: "";
+                position: absolute;
+                bottom: 2px;
+                left: 0;
+                width: 100%;
+                height: 30%;
+                background-color: rgba(250, 204, 21, 0.4);
+                z-index: -1;
+                border-radius: 4px;
+            }
+            .circle-icon {
+                width: 36px;
+                height: 36px;
+                border-radius: 50%;
+                display: flex;
+                align-items: center;
+                justify-content: center;
+            }
+            .special-badge {
+                position: absolute;
+                top: -15px;
+                right: -10px;
+                background: linear-gradient(45deg, #ff6b6b, #ff9966);
+                color: white;
+                padding: 8px 16px;
+                border-radius: 20px;
+                font-weight: bold;
+                transform: rotate(15deg);
+                box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+                z-index: 10;
+            }
+            .eligibility-badge {
+                display: inline-block;
+                padding: 4px 10px;
+                border-radius: 12px;
+                font-size: 0.9rem;
+                margin: 3px;
+                color: white;
+            }
+        </style>
+    </head>
+    <body>
+        <div class="slide gradient-bg">
+            <div class="content p-6 md:p-10 flex flex-col">
+                <!-- Title Section -->
+                <div class="mb-8">
+                    <h1 class="title text-3xl md:text-4xl font-bold mb-2">招生對象與方案</h1>
+                    <div class="h-1 w-32 bg-gradient-to-r from-purple-500 to-indigo-500 rounded-full"></div>
+                </div>
+                <!-- Main Content - Two Plans -->
+                <div class="flex flex-col md:flex-row flex-1 md:space-x-8 space-y-8 md:space-y-0 items-stretch">
+                    <!-- Left Card: Disadvantaged Students -->
+                    <div class="w-full md:w-1/2 relative">
+                        <div class="special-badge">完全免費</div>
+                        <div class="card bg-gradient-to-br from-indigo-500 to-purple-600 text-white h-full flex flex-col">
+                            <div class="p-6 bg-white bg-opacity-10 flex items-center">
+                                <div class="bg-white w-12 h-12 rounded-full mr-4 flex items-center justify-center">
+                                    <i class="fas fa-hand-holding-heart text-2xl text-purple-600"></i>
+                                </div>
+                                <h2 class="text-2xl font-bold">弱勢學生專案</h2>
+                            </div>
+                            <div class="p-6 flex-1 flex flex-col">
+                                <p class="text-lg mb-4">我們深信，每個渴望學習的靈魂，都不應被環境所困。特別為有心向學但資源有限的弱勢家庭學子，提供一個翻轉未來的機會。</p>
+                                <div class="my-4">
+                                    <h3 class="text-xl font-bold mb-2 flex items-center"><i class="fas fa-check-circle mr-2"></i>專案資格</h3>
+                                    <div class="pl-6 mb-4">
+                                        <p class="mb-2">提供給國中、高中在學學生，並符合以下任一資格者：</p>
+                                        <div class="flex flex-wrap">
+                                            <span class="eligibility-badge bg-indigo-700">低收入戶家庭</span>
+                                            <span class="eligibility-badge bg-indigo-700">中低收入戶家庭</span>
+                                            <span class="eligibility-badge bg-indigo-700">特殊境遇家庭</span>
+                                            <span class="eligibility-badge bg-indigo-700">其他經濟困難者</span>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="bg-white bg-opacity-20 p-4 rounded-lg mb-4">
+                                    <div class="flex items-center mb-2">
+                                        <div class="circle-icon bg-white mr-3">
+                                            <i class="fas fa-coins text-purple-600"></i>
+                                        </div>
+                                        <h3 class="text-xl font-bold">僅收保證金</h3>
+                                    </div>
+                                    <p>為確保學習資源不被浪費，錄取者僅需繳交<span class="text-yellow-300 font-bold">新台幣 2,000 元</span>保證金。</p>
+                                </div>
+                                <div class="bg-white bg-opacity-20 p-4 rounded-lg">
+                                    <div class="flex items-center mb-2">
+                                        <div class="circle-icon bg-white mr-3">
+                                            <i class="fas fa-undo-alt text-purple-600"></i>
+                                        </div>
+                                        <h3 class="text-xl font-bold">全額退還</h3>
+                                    </div>
+                                    <p>只要在一年課程中，出席率達到規定標準，保證金將於課程結束後<span class="text-yellow-300 font-bold">全額無息退還</span>。</p>
+                                </div>
+                                <div class="mt-auto pt-4">
+                                    <p class="text-center italic">這不只是一份補助，更是我們對你未來的投資與約定</p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <!-- Right Card: Regular Students -->
+                    <div class="w-full md:w-1/2">
+                        <div class="card bg-white h-full flex flex-col">
+                            <div class="p-6 bg-gradient-to-r from-amber-400 to-amber-500 text-white flex items-center rounded-t-2xl">
+                                <div class="bg-white w-12 h-12 rounded-full mr-4 flex items-center justify-center">
+                                    <i class="fas fa-user-graduate text-2xl text-amber-500"></i>
+                                </div>
+                                <h2 class="text-2xl font-bold">一般學生方案</h2>
+                            </div>
+
+                            <div class="p-6 flex-1 flex flex-col">
+                                <p class="text-lg mb-4 text-gray-700">歡迎所有渴望突破、追求卓越的國、高中生加入這個充滿活力的學習社群，與頂尖師資近距離互動，共創卓越未來！</p>
+                                <div class="bg-amber-50 p-6 rounded-lg mb-6">
+                                    <h3 class="text-2xl font-bold text-amber-600 mb-2 flex items-center"><i class="fas fa-tag mr-2"></i>學費方案</h3>
+                                    <p class="text-4xl font-black text-amber-600 text-center my-3">NT$ 10,000 <span class="text-lg font-normal">/月</span></p>
+                                </div>
+                                <h3 class="text-xl font-bold text-gray-700 mb-3">為何加入？</h3>
+                                <div class="space-y-4 mb-6">
+                                    <div class="flex items-start">
+                                        <div class="circle-icon bg-amber-100 mr-3 mt-1 flex-shrink-0">
+                                            <i class="fas fa-star text-amber-500"></i>
+                                        </div>
+                                        <div>
+                                            <h4 class="font-bold text-gray-700">頂尖師資</h4>
+                                            <p class="text-gray-600">享受來自國立大學學霸及各行各業菁英的專業指導</p>
+                                        </div>
+                                    </div>
+                                    <div class="flex items-start">
+                                        <div class="circle-icon bg-amber-100 mr-3 mt-1 flex-shrink-0">
+                                            <i class="fas fa-users text-amber-500"></i>
+                                        </div>
+                                        <div>
+                                            <h4 class="font-bold text-gray-700">優質同儕</h4>
+                                            <p class="text-gray-600">在積極的學習氛圍中，與志同道合的夥伴一起成長</p>
+                                        </div>
+                                    </div>
+                                    <div class="flex items-start">
+                                        <div class="circle-icon bg-amber-100 mr-3 mt-1 flex-shrink-0">
+                                            <i class="fas fa-heart text-amber-500"></i>
+                                        </div>
+                                        <div>
+                                            <h4 class="font-bold text-gray-700">社會共好</h4>
+                                            <p class="text-gray-600">你的參與直接支持弱勢助學方案，讓善意與知識形成正向循環</p>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="mt-auto">
+                                    <p class="text-center text-lg text-gray-700 italic font-medium">
+                                        無論你的背景如何，只要你懷抱改變的渴望，<br />
+                                        <span class="highlight-text font-bold">這裡就是你實現跨級學習的起點！</span>
+                                    </p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <!-- Bottom Section -->
+                <div class="mt-6 text-center">
+                    <p class="text-lg text-gray-700">
+                        <i class="fas fa-quote-left text-purple-400 mr-2 opacity-50"></i>
+                        每一個渴望改變的靈魂，都值得一個發光的舞台
+                        <i class="fas fa-quote-right text-purple-400 ml-2 opacity-50"></i>
+                    </p>
+                </div>
+            </div>
+        </div>
+        <script>
+            function sendHeight() {
+                const height = document.body.scrollHeight;
+                window.parent.postMessage({ type: "setHeight", height }, "*");
+            }
+
+            window.addEventListener("load", sendHeight);
+            window.addEventListener("resize", sendHeight);
+        </script>
+    </body>
+</html>
