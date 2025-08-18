@@ -15,32 +15,15 @@
                 margin: 0;
                 padding: 0;
                 font-family: "Noto Sans TC", sans-serif;
-                overflow-x: hidden;
-                min-height: 100vh; /* 確保最小高度 */
+                overflow: hidden; /* 採用成功頁面的設置 */
             }
 
             .slide {
-                width: 100%;
-                /* 移除固定的 min-height，讓內容決定高度 */
-                min-height: 100vh;
                 position: relative;
-                background: linear-gradient(120deg, #f9f9f9, #f0f8ff);
-                overflow: hidden;
-                display: flex;
-                flex-direction: column;
-                justify-content: space-between;
+                width: 100%;
+                overflow: hidden; /* 避免滾動條 */
                 padding: 1.5rem;
                 box-sizing: border-box;
-            }
-
-            /* 手機端調整 */
-            @media (max-width: 768px) {
-                .slide {
-                    min-height: auto; /* 手機端不強制最小高度 */
-                    padding: 1rem;
-                    justify-content: flex-start;
-                    gap: 2rem;
-                }
             }
 
             .gradient-bg {
@@ -187,7 +170,7 @@
             </div>
 
             <!-- Footer CTA -->
-            <div class="z-10 flex-shrink-0">
+            <div class="z-10 flex-shrink-0 mt-6">
                 <div class="float">
                     <div class="bg-white bg-opacity-20 backdrop-filter backdrop-blur-sm rounded-xl p-6 text-center">
                         <h3 class="text-2xl font-bold text-white mb-2">你的潛力，正等著被釋放！</h3>
@@ -238,57 +221,21 @@
                 animateParticle();
             }
 
-            // 簡化且穩定的高度計算
-            let heightSent = false;
-
+            // 採用成功頁面的簡單高度計算方式
             function sendHeight() {
-                if (heightSent) return; // 防止重複發送
-
-                // 等待內容完全渲染
-                setTimeout(() => {
-                    const slide = document.querySelector(".slide");
-                    const computedStyle = window.getComputedStyle(slide);
-
-                    // 計算實際需要的高度
-                    const paddingTop = parseFloat(computedStyle.paddingTop);
-                    const paddingBottom = parseFloat(computedStyle.paddingBottom);
-                    const contentHeight = slide.scrollHeight;
-
-                    // 手機端添加額外緩衝
-                    const isMobile = window.innerWidth <= 768;
-                    const buffer = isMobile ? 40 : 20;
-
-                    const finalHeight = contentHeight + buffer;
-
-                    console.log("Sending height:", finalHeight); // 調試用
-
-                    window.parent.postMessage(
-                        {
-                            type: "setHeight",
-                            height: finalHeight,
-                        },
-                        "*"
-                    );
-
-                    heightSent = true;
-                }, 500); // 延遲確保所有內容載入完成
+                const minHeight = 600; // 保底高度
+                const realHeight = document.body.scrollHeight;
+                window.parent.postMessage(
+                    {
+                        type: "setHeight",
+                        height: Math.max(minHeight, realHeight),
+                    },
+                    "*"
+                );
             }
 
-            // 重置高度發送狀態（當視窗大小改變時）
-            function resetHeightSent() {
-                heightSent = false;
-                setTimeout(sendHeight, 100);
-            }
-
-            window.addEventListener("load", sendHeight);
-            window.addEventListener("resize", resetHeightSent);
-
-            // 確保字體載入後重新計算
-            document.fonts.ready.then(() => {
-                if (!heightSent) {
-                    sendHeight();
-                }
-            });
+            window.onload = sendHeight;
+            window.onresize = sendHeight;
         </script>
     </body>
 </html>
