@@ -9,8 +9,6 @@
         <script src="https://cdn.tailwindcss.com"></script>
 
         <style>
-            /* @import url("https://fonts.googleapis.com/css2?family=Noto+Sans+TC:wght@400;500;700;900&display=swap"); */
-
             body {
                 margin: 0;
                 padding: 0;
@@ -21,55 +19,12 @@
             .slide {
                 position: relative;
                 width: 100%;
-                height: 100vh; /* 固定為視窗高度 */
-                overflow: hidden; /* 避免滾動條 */
+                height: 100vh;
+                overflow: hidden;
             }
 
             .gradient-bg {
-                background: linear-gradient(135deg, #ff9966, #ff6b6b, #9370db, #6a5acd);
-                background-size: 400% 400%;
-                animation: gradient 15s ease infinite;
-            }
-
-            @keyframes gradient {
-                0% {
-                    background-position: 0% 50%;
-                }
-                50% {
-                    background-position: 100% 50%;
-                }
-                100% {
-                    background-position: 0% 50%;
-                }
-            }
-
-            .star {
-                position: absolute;
-                background-color: white;
-                border-radius: 50%;
-                animation: twinkle 2s infinite alternate;
-            }
-
-            .stars-container {
-                position: absolute;
-                top: 0;
-                left: 0;
-                width: 100%;
-                height: 100%;
-                overflow: hidden;
-                z-index: 0;
-                pointer-events: none; /* 避免阻擋點擊 */
-            }
-
-            @keyframes twinkle {
-                from {
-                    opacity: 0.2;
-                    transform: scale(0.8);
-                }
-                to {
-                    opacity: 1;
-                    transform: scale(1);
-                }
+                background: url("https://res.cloudinary.com/dtecs6q1u/image/upload/v1755658578/SaveTwitter.Net_DKFi3nlU8AEahIf_sgcikr.jpg") no-repeat center center / cover;
             }
 
             .highlight-text {
@@ -127,24 +82,6 @@
         </div>
 
         <script>
-            // Create twinkling stars effect
-            const starsContainer = document.getElementById("stars-container");
-            for (let i = 0; i < 100; i++) {
-                const star = document.createElement("div");
-                star.className = "star";
-
-                const size = Math.random() * 3 + 1;
-                star.style.width = `${size}px`;
-                star.style.height = `${size}px`;
-
-                star.style.left = `${Math.random() * 100}%`;
-                star.style.top = `${Math.random() * 100}%`;
-
-                star.style.animationDelay = `${Math.random() * 2}s`;
-                starsContainer.appendChild(star);
-            }
-
-            // 自動調整 iframe 高度
             function sendHeight() {
                 const minHeight = 600; // 保底高度
                 const realHeight = document.body.scrollHeight;
