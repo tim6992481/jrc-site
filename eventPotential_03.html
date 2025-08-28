@@ -12,13 +12,14 @@
                 margin: 0;
                 padding: 0;
                 font-family: "Noto Sans TC", sans-serif;
-                overflow-x: hidden;
+                overflow: hidden;
             }
             .slide {
                 width: 100%;
                 min-height: 720px;
                 position: relative;
                 background: linear-gradient(120deg, #f9f9f9, #f0f8ff);
+                overflow-x: hidden;
             }
             .slide::before {
                 position: absolute;
@@ -90,10 +91,9 @@
                     <!-- Left Side -->
                     <div class="w-full lg:w-2/5 flex flex-col gap-6">
                         <!-- 圖片區塊 -->
-                        <div class="rounded-xl overflow-hidden shadow-lg flex-1">
-                            <img alt="師生互動" class="w-full h-full object-cover" src="https://picture-search.skywork.ai/aippt/image/sheet/a4f6eebfc97b96f91bb360319d423717.jpg" />
+                        <div class="rounded-xl overflow-hidden shadow-lg">
+                            <img alt="師生互動" class="w-full h-48 sm:h-64 md:h-80 lg:h-full object-cover" src="https://res.cloudinary.com/dtecs6q1u/image/upload/v1756294436/5211204_xex7bd.jpg" />
                         </div>
-
                         <!-- 卡片 -->
                         <div class="bg-gradient-to-r from-purple-600 to-indigo-500 text-white p-6 rounded-xl shadow-lg flex-1 flex flex-col justify-center">
                             <h3 class="text-2xl font-bold mb-5">不只是老師，更是你的人生嚮導！</h3>
